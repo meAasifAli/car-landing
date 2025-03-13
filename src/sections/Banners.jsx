@@ -3,7 +3,7 @@ import Banner from '../components/Banner'
 
 const Banners = () => {
     return (
-        <section className='flex flex-row items-center gap-8 w-[90%] mx-auto py-16' id="banner" aria-labelledby='banner'>
+        <section className='flex flex-col md:flex-row items-center gap-8 w-[90%] mx-auto py-4 md:py-8 lg:py-16' id="banner" aria-labelledby='banner'>
             <Banner
                 heading={"Are You Looking for a car?"}
                 des={"we are committed to providing our customers with the exceptional services."}

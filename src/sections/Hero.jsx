@@ -6,15 +6,15 @@ const Hero = () => {
         <header
             id="home"
             aria-labelledby="hero-heading"
-            className="relative h-screen flex flex-col justify-center items-center bg-slate-200"
+            className="relative h-screen w-full flex flex-col justify-center items-center bg-slate-200"
         >
-            <article className="flex flex-col gap-8 justify-center items-center text-center">
-                <p className="text-lg font-normal leading-[24px] text-black">
+            <article className="flex flex-col gap-4 lg:gap-8 justify-center items-center text-center w-[90%] mx-auto">
+                <p className="md:text-lg text-md font-normal leading-[24px] text-black">
                     Find cars for sale and for rent near you.
                 </p>
                 <h1
                     id="hero-heading"
-                    className="font-sans font-bold text-[60px] leading-[48px] my-6"
+                    className="font-sans font-bold text-[30px] lg:text-[60px] leading-[48px] my-6"
                 >
                     Find Your Dream Car
                 </h1>
@@ -23,9 +23,9 @@ const Hero = () => {
                 <form
                     action=""
                     aria-labelledby="search-form-label"
-                    className="flex justify-center items-center gap-4 p-8 h-[70px] bg-white shadow-md rounded-full z-50"
+                    className="flex flex-col sm:flex-row justify-center items-center lg:gap-4 gap-2 p-4 lg:p-8 lg:h-[70px] bg-white shadow-md rounded-lg w-full lg:w-[50%] mx-auto lg:rounded-2xl z-50"
                 >
-                    <fieldset className="flex gap-4 items-center">
+                    <fieldset className="flex flex-col sm:flex-row gap-4 items-center w-full">
                         <legend id="search-form-label" className="sr-only">
                             Search for a car
                         </legend>
@@ -37,7 +37,7 @@ const Hero = () => {
                         <select
                             name="usedcars"
                             id="usedcars"
-                            className="p-2 border rounded-lg"
+                            className="p-2 border rounded-lg w-full"
                         >
                             <option disabled value="used cars">
                                 Used Cars
@@ -53,7 +53,7 @@ const Hero = () => {
                         <select
                             name="anymakes"
                             id="anymakes"
-                            className="p-2 border rounded-lg max-h-40 overflow-y-auto"
+                            className="p-2 border rounded-lg w-full"
                         >
                             <option disabled value="Any Makes">
                                 Any Makes
@@ -86,7 +86,7 @@ const Hero = () => {
                         <select
                             name="anymodel"
                             id="anymodel"
-                            className="p-2 border rounded-lg"
+                            className="p-2 border rounded-lg w-full"
                         >
                             <option value="anymodel" disabled>
                                 Any Model?
@@ -107,7 +107,7 @@ const Hero = () => {
                         <select
                             name="allprices"
                             id="allprices"
-                            className="p-2 border rounded-lg"
+                            className="p-2 border rounded-lg w-full"
                         >
                             <option value="allprices" disabled>
                                 All Prices
@@ -120,7 +120,7 @@ const Hero = () => {
                         {/* Search Button */}
                         <button
                             type="submit"
-                            className="h-10 w-10 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors flex justify-center items-center"
+                            className="h-10 w-full  rounded-2xl bg-blue-500 text-white hover:bg-blue-600 transition-colors flex justify-center items-center"
                             aria-label="Search cars"
                         >
                             <CiSearch className="text-white text-center" size={20} />

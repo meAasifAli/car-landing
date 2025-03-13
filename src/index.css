@@ -8,27 +8,14 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Custom styles for select dropdown */
-select {
-  background-color: white;
-  border: none; /* Tailwind's border-gray-300 */
-  border-radius: 0.5rem; /* Tailwind's rounded-lg */
-  padding: 0.5rem 2rem 0.5rem 1rem; /* Tailwind's p-2 with extra padding for arrow */
-  font-size: 1rem; /* Tailwind's text-base */
-  color: #4a5568; /* Tailwind's text-gray-700 */
-  cursor: pointer;
-}
-
 #allprices {
   appearance: none;
 }
 
-select:hover {
-  border-color: #a0aec0;
+select {
+  padding: 10px;
 }
 
-select:focus {
-  outline: none;
-  border-color: #4299e1;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+select {
+  border: none;
 }
