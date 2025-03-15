@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
-
+import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 
 const Contact = () => {
+    const [isOpen, setIsOpen] = useState(false)
     const [search, setSearch] = useState("")
     const [selectedYear, setSelectedYear] = useState("")
     const [selectedBrand, setSelectedBrand] = useState(null)
@@ -104,6 +105,23 @@ const Contact = () => {
         setPhone(val)
     }
 
+    const handleGetOffer = () => {
+        console.log("selectedYear", selectedYear);
+        console.log("selectedBrand", selectedBrand);
+        console.log("selectedModel", selectedModel);
+        console.log("vehcileCondition", vehcileCondition);
+        console.log("mileage", mileage);
+        console.log("keysAvailable", keysAvailable);
+        console.log(phone);
+
+        if (!selectedYear || !selectedBrand || !selectedModel || !vehcileCondition || !mileage || !keysAvailable || !phone) {
+            alert("Each field is required")
+            return
+        }
+
+        setIsOpen(true)
+    }
+
     return (
         <div className='flex flex-col justify-center items-center h-screen'>
             {
@@ -144,7 +162,7 @@ const Contact = () => {
                             {
                                 carBrands.map((item, id) => {
                                     return (
-                                        <li onClick={() => handleSelectedBrand(item)} key={id} className={`${selectedBrand === item.name && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>{item.name}</li>
+                                        <li onClick={() => handleSelectedBrand(item)} key={id} className={`${selectedBrand?.name === item.name && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>{item.name}</li>
                                     )
                                 })
                             }
@@ -168,7 +186,7 @@ const Contact = () => {
                             {
                                 selectedBrand && selectedBrand?.models.map((item, id) => {
                                     return (
-                                        <li onClick={() => handleSelectedModel(item)} key={id} className='py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer'>{item}</li>
+                                        <li onClick={() => handleSelectedModel(item)} key={id} className={`${item === selectedModel && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>{item}</li>
                                     )
                                 })
                             }
@@ -185,9 +203,9 @@ const Contact = () => {
                     </div>
                     <div className='overflow-y-scroll h-[50vh] w-full'>
                         <ul className=' w-full border-0'>
-                            <li onClick={() => handleSetVehcileCondition("startsanddrives")} className='py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer'>Starts And Drives</li>
-                            <li onClick={() => handleSetVehcileCondition("startsbutdoesnotdrive")} className='py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer'>Starts But Doesn't Drive</li>
-                            <li onClick={() => handleSetVehcileCondition("doesnotstart")} className='py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer'>Doesn't Start</li>
+                            <li onClick={() => handleSetVehcileCondition("startsanddrives")} className={`${vehcileCondition === "startsanddrives" && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>Starts And Drives</li>
+                            <li onClick={() => handleSetVehcileCondition("startsbutdoesnotdrive")} className={`${vehcileCondition === "startsbutdoesnotdrive" && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>Starts But Doesn't Drive</li>
+                            <li onClick={() => handleSetVehcileCondition("doesnotstart")} className={`${vehcileCondition === "doesnotstart" && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>Doesn't Start</li>
                         </ul>
                     </div>
 
@@ -200,7 +218,7 @@ const Contact = () => {
                         <h1 className='text-white font-medium'>Enter Your Vehcile Mileage</h1>
                     </div>
                     <div className='overflow-y-scroll h-[50vh] w-full'>
-                        <input value={mileage} onChange={e => handleSetMileage(e.target.value)} placeholder='Vehcile Mileage' className='w-full p-2 focus:outline-0 border-b-[0.5px] border-b-[#ccc]' type="number" name="" id="" />
+                        <input value={mileage} onChange={e => handleSetMileage(e.target.value)} placeholder='Vehcile Mileage (miles)' className='w-full p-2 focus:outline-0 border-b-[0.5px] border-b-[#ccc] ' type="number" name="" id="" />
                     </div>
                 </form>
             }
@@ -211,8 +229,8 @@ const Contact = () => {
                     </div>
                     <div className='overflow-y-scroll h-[50vh] w-full'>
                         <ul className='w-full border-0'>
-                            <li onClick={() => handleSetKeysAvailable(true)} className='py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer'>Yes</li>
-                            <li onClick={() => handleSetKeysAvailable(false)} className='py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer'>No</li>
+                            <li onClick={() => handleSetKeysAvailable(true)} className={`${keysAvailable && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>Yes</li>
+                            <li onClick={() => handleSetKeysAvailable(false)} className={`${!keysAvailable && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>No</li>
                         </ul>
                     </div>
                 </form>
@@ -233,11 +251,25 @@ const Contact = () => {
                     prev
                 </button>
                 {
-                    currIndex === 6 ? <button className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>Get an Offer</button> : <button onClick={() => setCurrIndex(pre => pre === 6 ? pre : pre + 1)} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>
+                    currIndex === 6 ? <button onClick={handleGetOffer} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>Get an Offer</button> : <button onClick={() => setCurrIndex(pre => pre === 6 ? pre : pre + 1)} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>
                         <FaArrowAltCircleRight size={20} />
                         next
                     </button>
                 }
+                <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50 ">
+                    <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+                        <DialogPanel className="max-w-full  space-y-4 border bg-black p-12 rounded-2xl">
+                            <DialogTitle className="font-bold text-white">Your Instant Offer</DialogTitle>
+                            <Description className={"text-white"}>We are ready to pick your {`${selectedBrand?.name} ${selectedModel}`}</Description>
+                            <p className='text-md font-medium text-white'>we pay you</p>
+                            <h1 className='font-extrabold text-5xl text-green-700'>$5000</h1>
+                            <div className="flex gap-4">
+                                <button className='bg-red-700 text-white p-2' onClick={() => setIsOpen(false)}>Cancel offer</button>
+                                <button className='bg-blue-500 text-white p-2' onClick={() => setIsOpen(false)}>Accept offer</button>
+                            </div>
+                        </DialogPanel>
+                    </div>
+                </Dialog>
             </div>
         </div>
     )
