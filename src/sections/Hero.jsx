@@ -11,20 +11,20 @@ const Hero = () => {
             <article className="flex flex-col md:flex-row gap-4 lg:gap-8 md:justify-between justify-center items-center text-center w-[90%] mx-auto">
                 <div className="flex flex-col justify-start items-start w-full">
                     {/* Subheading */}
-                    <p className="text-lg md:text-2xl uppercase font-medium leading-tight text-gray-700">
+                    <p className="text-lg md:text-2xl uppercase font-medium leading-tight text-gray-700 text-start">
                         Buy or Rent the Perfect Car Near You
                     </p>
 
                     {/* Main Heading */}
                     <h1
                         id="hero-heading"
-                        className="font-sans max-w-[600px] text-start font-extrabold text-[32px] md:text-[48px] lg:text-[60px] leading-14 my-4 text-black"
+                        className="font-sans max-w-[600px] text-start font-extrabold text-[32px] md:text-[48px] lg:text-[60px] leading-8 lg:leading-14 my-4 text-black"
                     >
                         Drive Your Dream Car Today
                     </h1>
 
                     {/* Supporting Text */}
-                    <span className="text-md md:text-lg font-normal text-gray-600 ">
+                    <span className="text-md text-start md:text-lg font-normal text-gray-600 ">
                         Sell your old car effortlessly—no haggling, no hassle, just the best deal.
                     </span>
                 </div>
