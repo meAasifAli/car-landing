@@ -56,7 +56,7 @@ const App = () => {
                     </ul>
                 </section>
                 <Banners />
-                <section id="searched-cars" aria-labelledby='searched-cars-heading' className='w-[90%] mx-auto py-16'>
+                <section id="searched-cars" aria-labelledby='searched-cars-heading' className='w-[90%] mx-auto py-4 md:py-8 lg:py-16'>
                     <h1 id='searched-cars-heading' className="text-3xl font-bold text-center py-8">Most Searched Cars</h1>
                     <div id="tabs" className='border-b border-b-[#f3f3f3]  w-full flex items-center justify-center gap-6'>
                         <div onClick={() => setActiveTab("instock")} className={`cursor-pointer pb-2 ${activeTab === "instock" && "border-b-2 border-b-[#425bac]"}`} role='button'>
@@ -73,7 +73,7 @@ const App = () => {
                         </div>
                     </div>
                     <Carousel
-                        className='py-16'
+                        className='lg:py-16 md:py-8 py-4'
                         responsive={responsive}
                         swipeable
                         autoPlay
@@ -88,8 +88,8 @@ const App = () => {
                     </Carousel>
                 </section>
                 <section id="choose-us" aria-labelledby='choose-us-heading' className='w-[90%] mx-auto '>
-                    <h1 id='choose-us-heading' className="text-3xl font-bold text-center py-8">Why Show US?</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center py-16 gap-4">
+                    <h1 id='choose-us-heading' className="text-3xl font-bold text-center py-4 lg:py-8">Why Show US?</h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center lg:py-16 md:py-8 py-4 gap-4">
                         <ChooseCard
                             imgSrc={"https://demoapus1.com/boxcar/wp-content/uploads/2023/11/f1.svg"}
                             title={"Special Financing Offers"}
@@ -113,10 +113,10 @@ const App = () => {
 
                     </div>
                 </section>
-                <section id="searched-cars" aria-labelledby='searched-cars-heading' className='w-[90%] mx-auto py-16'>
+                <section id="searched-cars" aria-labelledby='searched-cars-heading' className='w-[90%] mx-auto lg:py-16 py-4 md:py-8'>
                     <h1 id='searched-cars-heading' className="text-3xl font-bold text-center py-8">Latest Cars</h1>
                     <Carousel
-                        className='py-16'
+                        className='lg:py-16 md:py-8 py-4'
                         responsive={responsive}
                         swipeable
                         autoPlay
@@ -130,7 +130,7 @@ const App = () => {
                         <Car />
                     </Carousel>
                 </section>
-                <section id="blogs" aria-labelledby='blogs' className='bg-blue-100 h-screen flex justify-between px-16 items-center'>
+                <section id="blogs" aria-labelledby='blogs' className='bg-blue-100 h-screen flex  flex-col lg:flex-row justify-center lg:justify-between md:px-8 px-4 lg:px-16 items-center py-4'>
                     <div>
                         <h3 className='text-3xl font-bold tracking-widest leading-10'>Explore Our Premium Brands</h3>
                         <p className='text-sm font-normal leading-6 tracking-wider max-w-[450px] mt-6'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi officiis est quisquam consequatur error tempora dolore ab quam, assumenda voluptatem.</p>
@@ -139,14 +139,14 @@ const App = () => {
                         </button>
                     </div>
                     <div>
-                        <img className='h-[500px] w-[500px]  object-contain' src="https://demoapus1.com/boxcar/wp-content/uploads/2023/09/logo-brand.png" alt="bg-img" />
+                        <img className='lg:h-[500px] lg:w-[500px] md:w-[300px] md:h-[300px] h-[300px] w-[300px]  object-contain' src="https://demoapus1.com/boxcar/wp-content/uploads/2023/09/logo-brand.png" alt="bg-img" />
                     </div>
                 </section>
-                <section id='news-letter' aria-labelledby='news-letter' className='flex flex-col justify-center items-center py-16'>
+                <section id='news-letter' aria-labelledby='news-letter' className='flex flex-col justify-center items-center py-16 '>
                     <h1 className='text-3xl font-medium tracking-wider leading-6'>Join Cash4Cars</h1>
                     <p className='text-sm font-normal mt-4'>Receive pricing updates, shopping tips & more!</p>
 
-                    <form action="" id='news-letter' className='border border-black p-4 rounded-2xl mt-8 w-[500px] flex items-center'>
+                    <form action="" id='news-letter' className='border border-black p-3 lg:p-4 rounded-2xl mt-4 lg:mt-8  lg:w-[500px] flex items-center w-[90%] mx-auto'>
                         <input type="text" placeholder='Enter your email' className='outline-0 py-2 w-full' />
                         <button className='bg-black p-2 text-white rounded-2xl'>Signup</button>
                     </form>
@@ -154,7 +154,7 @@ const App = () => {
             </main >
 
             <footer>
-                <div className='border-[0.5px] border-[#ccc] h-[50vh] grid gap-8 grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-items-center w-full pt-16'>
+                <div className='border-[0.5px] border-[#ccc] lg:h-[50vh] grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center w-full pt-16'>
                     <div className='flex flex-col gap-4'>
                         <h1 className='text-xl font-medium'>Company</h1>
                         <a href="#" className='text-sm font-normal'>about us</a>
@@ -193,7 +193,7 @@ const App = () => {
                         <a href="#" className='text-sm font-normal'>How it Works</a>
                     </div>
                 </div>
-                <div className='flex justify-between items-center py-6 w-[90%] mx-auto'>
+                <div className='flex flex-col md:flex-row justify-center md:justify-between items-center py-6 w-[90%] mx-auto'>
                     <p className='text-sm font-normal'>&copy; 2025 EcologyCash4Cars.com all rights reserved</p>
                     <div className='flex items-center gap-4'>
                         <a href='#' className='text-sm font-normal'>Terms and Conditions</a>

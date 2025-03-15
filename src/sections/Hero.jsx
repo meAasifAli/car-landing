@@ -8,24 +8,35 @@ const Hero = () => {
             aria-labelledby="hero-heading"
             className="relative h-screen w-full flex flex-col justify-center items-center bg-slate-200"
         >
-            <article className="flex flex-col gap-4 lg:gap-8 justify-center items-center text-center w-[90%] mx-auto">
-                <p className="md:text-lg text-md font-normal leading-[24px] text-black">
-                    Find cars for sale and for rent near you.
-                </p>
-                <h1
-                    id="hero-heading"
-                    className="font-sans font-bold text-[30px] lg:text-[60px] leading-[48px] my-6"
-                >
-                    Find Your Dream Car
-                </h1>
+            <article className="flex flex-col md:flex-row gap-4 lg:gap-8 md:justify-between justify-center items-center text-center w-[90%] mx-auto">
+                <div className="flex flex-col justify-start items-start w-full">
+                    {/* Subheading */}
+                    <p className="text-lg md:text-2xl uppercase font-medium leading-tight text-gray-700">
+                        Buy or Rent the Perfect Car Near You
+                    </p>
+
+                    {/* Main Heading */}
+                    <h1
+                        id="hero-heading"
+                        className="font-sans max-w-[600px] text-start font-extrabold text-[32px] md:text-[48px] lg:text-[60px] leading-14 my-4 text-black"
+                    >
+                        Drive Your Dream Car Today
+                    </h1>
+
+                    {/* Supporting Text */}
+                    <span className="text-md md:text-lg font-normal text-gray-600 ">
+                        Sell your old car effortlessly—no haggling, no hassle, just the best deal.
+                    </span>
+                </div>
+
 
                 {/* Search Form */}
                 <form
                     action=""
                     aria-labelledby="search-form-label"
-                    className="flex flex-col sm:flex-row justify-center items-center lg:gap-4 gap-2 p-4 lg:p-8 lg:h-[70px] bg-white shadow-md rounded-lg w-full lg:w-[50%] mx-auto lg:rounded-2xl z-50"
+                    className="flex flex-col   items-center lg:gap-4 gap-2 p-4 lg:p-8  bg-white shadow-md rounded-lg w-full lg:w-[30%] mx-auto lg:rounded-2xl z-50"
                 >
-                    <fieldset className="flex flex-col sm:flex-row gap-4 items-center w-full">
+                    <fieldset className="flex flex-col  gap-4 items-center w-full">
                         <legend id="search-form-label" className="sr-only">
                             Search for a car
                         </legend>
@@ -37,14 +48,15 @@ const Hero = () => {
                         <select
                             name="usedcars"
                             id="usedcars"
-                            className="p-2 border rounded-lg w-full"
+                            className="w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all"
                         >
-                            <option disabled value="used cars">
+                            <option disabled className="text-gray-400" value="used cars">
                                 Used Cars
                             </option>
                             <option value="used">Used</option>
                             <option value="new">New</option>
                         </select>
+
 
                         {/* Any Makes Dropdown */}
                         <label htmlFor="anymakes" className="sr-only">
@@ -53,7 +65,7 @@ const Hero = () => {
                         <select
                             name="anymakes"
                             id="anymakes"
-                            className="p-2 border rounded-lg w-full"
+                            className="w-full  p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all"
                         >
                             <option disabled value="Any Makes">
                                 Any Makes
@@ -86,7 +98,7 @@ const Hero = () => {
                         <select
                             name="anymodel"
                             id="anymodel"
-                            className="p-2 border rounded-lg w-full"
+                            className="w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all"
                         >
                             <option value="anymodel" disabled>
                                 Any Model?
@@ -107,7 +119,7 @@ const Hero = () => {
                         <select
                             name="allprices"
                             id="allprices"
-                            className="p-2 border rounded-lg w-full"
+                            className="w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all"
                         >
                             <option value="allprices" disabled>
                                 All Prices
@@ -118,23 +130,21 @@ const Hero = () => {
                         </select>
 
                         {/* Search Button */}
+
                         <button
                             type="submit"
-                            className="h-10 w-full  rounded-2xl bg-blue-500 text-white hover:bg-blue-600 transition-colors flex justify-center items-center"
+                            className="h-12 w-full rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-all flex justify-center items-center shadow-sm border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                             aria-label="Search cars"
                         >
-                            <CiSearch className="text-white text-center" size={20} />
+                            <CiSearch className="text-white" size={20} />
                         </button>
+
+
                     </fieldset>
                 </form>
             </article>
+            <img className="absolute -bottom-[30%] h-[400px] w-[90%] object-contain" src="/assets/car.png" alt="bgimage" />
 
-            {/* Background Car Image */}
-            <img
-                className="w-[1000px] h-[800px] object-contain z-0 absolute bottom-[-50%]"
-                src="https://demoapus1.com/boxcar/wp-content/uploads/2023/11/slider51.png"
-                alt="Luxury car available for rent or sale"
-            />
         </header>
     );
 };

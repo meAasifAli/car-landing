@@ -10,32 +10,14 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }) => {
                     <li className="relative group">
                         <a href="#" className="font-sans font-normal text-sm">About</a>
                         <div
-                            className="absolute -bottom-1 left-0 h-1 bg-[#F55757] w-0 group-hover:w-full transition-all duration-300">
+                            className="absolute -bottom-1 left-0 h-1 bg-slate-300 w-0 group-hover:w-full transition-all duration-300">
                         </div>
                     </li>
-                    <li className="relative group">
-                        <a href="#" className="font-sans font-normal text-sm">Car</a>
-                        <div
-                            className="absolute -bottom-1 left-0 h-1 bg-[#F55757] w-0 group-hover:w-full transition-all duration-300">
-                        </div>
-                    </li>
-                    <li className="relative group">
-                        <a href="#" className="font-sans font-normal text-sm">Become a Partner</a>
-                        <div
-                            className="absolute -bottom-1 left-0 h-1 bg-[#F55757] w-0 group-hover:w-full transition-all duration-300">
-                        </div>
 
-                    </li>
-                    <li className="relative group">
-                        <a href="#" className="font-sans font-normal text-sm">Terms and Conditions</a>
-                        <div
-                            className="absolute -bottom-1 left-0 h-1 bg-[#F55757] w-0 group-hover:w-full transition-all duration-300">
-                        </div>
-                    </li>
                     <li className="relative group">
                         <a href="#" className="font-sans font-normal text-sm">Contact us</a>
                         <div
-                            className="absolute -bottom-1 left-0 h-1 bg-[#F55757] w-0 group-hover:w-full transition-all duration-300">
+                            className="absolute -bottom-1 left-0 h-1 bg-slate-300 w-0 group-hover:w-full transition-all duration-300">
                         </div>
                     </li>
                 </ul>

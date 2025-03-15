@@ -7,15 +7,3 @@
   box-sizing: border-box; */
   font-family: "Poppins", sans-serif;
 }
-
-#allprices {
-  appearance: none;
-}
-
-select {
-  padding: 10px;
-}
-
-select {
-  border: none;
-}
