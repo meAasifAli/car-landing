@@ -34,7 +34,7 @@ const Hero = () => {
                 <form
                     action=""
                     aria-labelledby="search-form-label"
-                    className="flex flex-col   items-center lg:gap-4 gap-2 p-4 lg:p-8  bg-white shadow-md rounded-lg w-full lg:w-[30%] mx-auto lg:rounded-2xl z-50"
+                    className="flex flex-col   items-center lg:gap-4 gap-2 p-4 lg:p-8  bg-slate-50 shadow-md rounded-lg w-full lg:w-[40%] mx-auto lg:rounded-2xl z-50"
                 >
                     <fieldset className="flex flex-col  gap-4 items-center w-full">
                         <legend id="search-form-label" className="sr-only">
@@ -143,7 +143,7 @@ const Hero = () => {
                     </fieldset>
                 </form>
             </article>
-            <img className="absolute -bottom-[30%] h-[400px] w-[90%] object-contain" src="/assets/car.png" alt="bgimage" />
+            <img className="absolute -bottom-[30%] lg:-bottom-[30%] h-[420px] w-full object-contain z-0" src="/assets/car.png" alt="bgimage" />
 
         </header>
     );

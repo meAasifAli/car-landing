@@ -28,7 +28,7 @@ const Home = () => {
         <main>
             {/* Hero Section */}
             <Hero />
-            <section id="category" aria-labelledby="category-heading" className="lg:pt-[200px] md:pt-[100px] pt-[50px] pb-8 lg:pb-16 w-full lg:w-[90%] mx-auto">
+            <section id="category" aria-labelledby="category-heading" className="lg:pt-[200px] md:pt-[100px] py-[150px] pb-8 lg:pb-16 w-full lg:w-[90%] mx-auto">
                 <h1 id="category-heading" className="text-3xl font-bold text-center">Browse By Type</h1>
                 <ul className="flex flex-row overflow-x-scroll gap-4  lg:gap-8 items-center mt-8 lg:mt-16">
                     <Category text="SUV" Icon={<TbCarSuv size={40} />} />

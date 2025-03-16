@@ -5,7 +5,8 @@ import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react
 
 const Contact = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const [search, setSearch] = useState("")
+    const [searchYear, setSearchYear] = useState("")
+    const [searchCarBrand, setSearchCarBrand] = useState("")
     const [selectedYear, setSelectedYear] = useState("")
     const [selectedBrand, setSelectedBrand] = useState(null)
     const [selectedModel, setSelectedModel] = useState(null)
@@ -58,19 +59,35 @@ const Contact = () => {
         { "id": 39, "name": "Koenigsegg", "models": ["Jesko", "Regera", "Agera", "Gemera"] }
     ]
 
+    const [filteredYears, setFilteredYears] = useState(years)
+    const [filteredCars, setFilteredCars] = useState(carBrands)
+
 
     const handleYearSelect = (item) => {
         setSelectedYear(item)
         setCurrIndex(1)
     }
 
-    // console.log("selectedYear", selectedYear);
-    // console.log("selectedBrand", selectedBrand);
-    // console.log("selectedModel", selectedModel);
-    // console.log("vehcileCondition", vehcileCondition);
-    // console.log("keysAvailable", keysAvailable);
 
 
+
+    const handleSearchYear = (ev) => {
+        const value = ev.target.value;
+        setSearchYear(value);
+
+        // Filter years based on input
+        const filtered = years.filter((item) => item.includes(value));
+        setFilteredYears(filtered);
+    };
+
+    const handleSearchCarBrand = (ev) => {
+        const value = ev.target.value;
+        setSearchCarBrand(value);
+
+        // Filter years based on input
+        const filtered = carBrands.filter((item) => item.name.includes(value));
+        setFilteredCars(filtered);
+    }
 
 
 
@@ -122,6 +139,38 @@ const Contact = () => {
         setIsOpen(true)
     }
 
+
+    const handleIncrementIndex = () => {
+        if (currIndex === 0) {
+            selectedYear === "" ? setCurrIndex(0) : setCurrIndex(currIndex + 1)
+            alert("Please Select a year")
+        }
+        else if (currIndex === 1) {
+            selectedBrand === null ? setCurrIndex(1) : setCurrIndex(currIndex + 1)
+            alert("please, choose any car brand")
+        }
+        else if (currIndex === 2) {
+            selectedModel === null ? setCurrIndex(2) : setCurrIndex(currIndex + 1)
+            alert("please, choose any car model")
+        }
+        else if (currIndex === 3) {
+            vehcileCondition === "" ? setCurrIndex(3) : setCurrIndex(currIndex + 1)
+            alert("please, choose a car condition")
+        }
+        else if (currIndex === 4) {
+            mileage === 0 ? setCurrIndex(4) : setCurrIndex(currIndex + 1)
+            alert("please, enter a mileage")
+        }
+        else if (currIndex === 5) {
+            keysAvailable === false ? setCurrIndex(5) : setCurrIndex(currIndex + 1)
+            alert("please, enter a mileage")
+        }
+        else {
+            setCurrIndex(currIndex + 1)
+        }
+    }
+
+
     return (
         <div className='flex flex-col justify-center items-center h-screen'>
             {
@@ -132,11 +181,11 @@ const Contact = () => {
                     <div className='overflow-y-scroll h-[50vh] w-full'>
                         <div className='p-4 flex items-center border-b  border-b-gray-300 '>
                             <CiSearch size={20} color='blue' />
-                            <input value={search} onChange={e => setSearch(e.target.value)} placeholder='Car Make' className='w-full p-2 focus:outline-0' type="search" name="" id="" />
+                            <input value={searchYear} onChange={handleSearchYear} placeholder='Car Make' className='w-full p-2 focus:outline-0' type="search" name="" id="" />
                         </div>
                         <ul className=' w-full border-0'>
                             {
-                                years.map((item, id) => {
+                                filteredYears.map((item, id) => {
                                     return (
                                         <li onClick={() => handleYearSelect(item)} key={id} className={`${selectedYear === item && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>{item}</li>
                                     )
@@ -156,11 +205,11 @@ const Contact = () => {
                     <div className='overflow-y-scroll h-[50vh] w-full'>
                         <div className='p-4 flex items-center border-b  border-b-gray-300 '>
                             <CiSearch size={20} color='blue' />
-                            <input value={search} onChange={e => setSearch(e.target.value)} placeholder='Car Brand' className='w-full p-2 focus:outline-0' type="search" name="" id="" />
+                            <input value={searchCarBrand} onChange={handleSearchCarBrand} placeholder='Car Brand' className='w-full p-2 focus:outline-0' type="search" name="" id="" />
                         </div>
                         <ul className=' w-full border-0'>
                             {
-                                carBrands.map((item, id) => {
+                                filteredCars.map((item, id) => {
                                     return (
                                         <li onClick={() => handleSelectedBrand(item)} key={id} className={`${selectedBrand?.name === item.name && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>{item.name}</li>
                                     )
@@ -178,10 +227,7 @@ const Contact = () => {
                         <h1 className='text-white font-medium'>Car Model</h1>
                     </div>
                     <div className='overflow-y-scroll h-[50vh] w-full'>
-                        <div className='p-4 flex items-center border-b  border-b-gray-300 '>
-                            <CiSearch size={20} color='blue' />
-                            <input value={search} onChange={e => setSearch(e.target.value)} placeholder='Car Model' className='w-full p-2 focus:outline-0' type="search" name="" id="" />
-                        </div>
+
                         <ul className=' w-full border-0'>
                             {
                                 selectedBrand && selectedBrand?.models.map((item, id) => {
@@ -251,7 +297,7 @@ const Contact = () => {
                     prev
                 </button>
                 {
-                    currIndex === 6 ? <button onClick={handleGetOffer} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>Get an Offer</button> : <button onClick={() => setCurrIndex(pre => pre === 6 ? pre : pre + 1)} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>
+                    currIndex === 6 ? <button onClick={handleGetOffer} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>Get an Offer</button> : <button onClick={handleIncrementIndex} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>
                         <FaArrowAltCircleRight size={20} />
                         next
                     </button>
