@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Navbar from './sections/Navbar'
 import { IoIosCall } from "react-icons/io";
 import Contact from './pages/Contact';
+import About from './pages/About';
+import Services from './pages/Services';
 
 
 const App = () => {
@@ -16,12 +18,14 @@ const App = () => {
                 </a>
                 <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
             </header>
-            <div className='bg-blue-500 p-4 w-full flex justify-center items-center'>
+            <div className='bg-blue-500 p-2 w-full flex justify-center items-center'>
                 <IoIosCall className='text-xl text-white' />
-                <a href="tel:+9111111111" className='text-lg text-white'>111111111111</a>
+                <a href="tel:+9111111111" className='text-lg text-white'>+91-8081785613</a>
             </div>
             <Routes>
                 <Route path='/' element={<Home />} />
+                <Route path='/about' element={<About />} />
+                <Route path='/services' element={<Services />} />
                 <Route path='/contact' element={<Contact />} />
             </Routes>
             <footer>

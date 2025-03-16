@@ -18,7 +18,7 @@ const Hero = () => {
                     {/* Main Heading */}
                     <h1
                         id="hero-heading"
-                        className="font-sans max-w-[600px] text-start font-extrabold text-[32px] md:text-[48px] lg:text-[60px] leading-8 lg:leading-14 my-4 text-black"
+                        className="font-sans max-w-[600px] text-start font-extrabold text-[32px] md:text-[48px] lg:text-[60px] leading-8 sm:leading-14 my-4 text-black"
                     >
                         Drive Your Dream Car Today
                     </h1>
