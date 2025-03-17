@@ -1,32 +1,29 @@
 import React from "react";
-import { CiSearch } from "react-icons/ci";
+
 
 const Hero = () => {
+    const years = ["2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"]
     return (
         <header
             id="home"
             aria-labelledby="hero-heading"
-            className="relative h-screen w-full flex flex-col justify-center items-center bg-slate-200"
+            className="relative lg:h-screen h-[140vh] w-full flex flex-col justify-center items-center bg-slate-200"
         >
             <article className="flex flex-col md:flex-row gap-4 lg:gap-8 md:justify-between justify-center items-center text-center w-[90%] mx-auto">
                 <div className="flex flex-col justify-start items-start w-full">
-                    {/* Subheading */}
-                    <p className="text-lg md:text-2xl uppercase font-medium leading-tight text-gray-700 text-start">
-                        Buy or Rent the Perfect Car Near You
-                    </p>
-
-                    {/* Main Heading */}
-                    <h1
-                        id="hero-heading"
-                        className="font-sans max-w-[600px] text-start font-extrabold text-[32px] md:text-[48px] lg:text-[60px] leading-8 sm:leading-14 my-4 text-black"
-                    >
-                        Drive Your Dream Car Today
-                    </h1>
 
                     {/* Supporting Text */}
                     <span className="text-md text-start md:text-lg font-normal text-gray-600 ">
-                        Sell your old car effortlessly—no haggling, no hassle, just the best deal.
+                        Free Pickup | Instant Offer | Hassle-Free Process.
                     </span>
+                    {/* Main Heading */}
+                    <h1
+                        id="hero-heading"
+                        className="font-sans max-w-[800px] text-start font-extrabold text-[24px] md:text-[48px] lg:text-[60px] leading-8 sm:leading-16 my-4 text-black"
+                    >
+                        Sell Your Junk or Used Car in San Diego – Get Paid Instantly!
+                    </h1>
+                    <span className="lg:text-sm text-xs max-w-[600px] text-start font-normal text-gray-600  ">Got an old, damaged, or unwanted car? We buy junk and second-hand cars in San Diego for top dollar – and we make it EASY. No haggling, no waiting, no hidden fees.</span>
                 </div>
 
 
@@ -42,27 +39,17 @@ const Hero = () => {
                         </legend>
 
                         {/* Used Cars Dropdown */}
-                        <label htmlFor="usedcars" className="sr-only">
-                            Used Cars
+                        <label htmlFor="name" className="sr-only">
+                            Name
                         </label>
-                        <select
-                            name="usedcars"
-                            id="usedcars"
-                            className="w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all"
-                        >
-                            <option disabled className="text-gray-400" value="used cars">
-                                Used Cars
-                            </option>
-                            <option value="used">Used</option>
-                            <option value="new">New</option>
-                        </select>
+                        <input type="text" placeholder="Your Name?" className="w-full p-2 lg:p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" />
 
 
                         {/* Any Makes Dropdown */}
                         <label htmlFor="anymakes" className="sr-only">
-                            Any Makes
+                            Car Brand
                         </label>
-                        <select
+                        {/* <select
                             name="anymakes"
                             id="anymakes"
                             className="w-full  p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all"
@@ -89,44 +76,45 @@ const Hero = () => {
                             <option value="Jeep">Jeep</option>
                             <option value="Land Rover">Land Rover</option>
                             <option value="Porsche">Porsche</option>
-                        </select>
+                        </select> */}
+                        <input type="text" placeholder="Car Brand" className="w-full p-2 lg:p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" />
 
                         {/* Any Model Dropdown */}
                         <label htmlFor="anymodel" className="sr-only">
-                            Any Model
+                            Car Model
                         </label>
-                        <select
-                            name="anymodel"
-                            id="anymodel"
-                            className="w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all"
-                        >
-                            <option value="anymodel" disabled>
-                                Any Model?
-                            </option>
-                            <option value="2000">2000</option>
-                            <option value="2001">2001</option>
-                            <option value="2002">2002</option>
-                            <option value="2003">2003</option>
-                            <option value="2004">2004</option>
-                            <option value="2005">2005</option>
-                            <option value="2006">2006</option>
-                        </select>
 
+                        <input type="text" placeholder="Car Model" className="w-full p-2 lg:p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" />
+                        <label className="sr-only" htmlFor="year">
+                            Year
+                        </label>
+                        <select className="w-full p-2 lg:p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" name="" id="">
+                            {
+                                years.map((year) => {
+                                    return <option value={year}>{year}</option>
+                                })
+                            }
+                        </select>
+                        <label htmlFor="phone" className="sr-only">
+                            phone
+                        </label>
+                        <input placeholder="Phone Number" className="w-full p-2 lg:p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" type="tel" name="" id="" />
                         {/* All Prices Dropdown */}
-                        <label htmlFor="allprices" className="sr-only">
-                            All Prices
+                        <label htmlFor="Expected-Price" className="sr-only">
+                            Expected Price
                         </label>
                         <select
-                            name="allprices"
-                            id="allprices"
-                            className="w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all"
+                            name="Expected-Price"
+                            id="Expected-Price"
+                            className="w-full p-2 lg:p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all"
                         >
                             <option value="allprices" disabled>
-                                All Prices
+                                Expected Price
                             </option>
-                            <option value="onetothousand">$1-$1000</option>
-                            <option value="onetotwo">$1000-$10000</option>
-                            <option value="twotothree">$10000-$100000</option>
+                            <option value="onetothousand">$0-$1000</option>
+                            <option value="onetotwo">$1000-$2000</option>
+                            <option value="twotothree">$2000-$5000</option>
+                            <option value="twotothree">$5000+</option>
                         </select>
 
                         {/* Search Button */}
@@ -136,15 +124,14 @@ const Hero = () => {
                             className="h-12 w-full rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-all flex justify-center items-center shadow-sm border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                             aria-label="Search cars"
                         >
-                            <CiSearch className="text-white" size={20} />
+                            Get Estimate Now
                         </button>
 
 
                     </fieldset>
                 </form>
             </article>
-            <img className="absolute -bottom-[30%] lg:-bottom-[30%] h-[420px] w-full object-contain z-0" src="/assets/car.png" alt="bgimage" />
-
+            <img className="absolute -bottom-[20%] lg:-bottom-[30%] h-[420px] lg:h-[65%] w-full object-contain z-0" src="/assets/car.png" alt="bgimage" />
         </header>
     );
 };

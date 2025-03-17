@@ -9,7 +9,10 @@ import "react-multi-carousel/lib/styles.css";
 import Car from '../components/Car';
 import ChooseCard from '../components/ChooseCard';
 import Hero from '../sections/Hero';
+import { useEffect, useRef, useState } from 'react';
+import { CgChevronLeft, CgChevronRight } from 'react-icons/cg';
 const Home = () => {
+    const scrollRef = useRef(null)
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -24,23 +27,75 @@ const Home = () => {
             items: 1
         }
     };
+
+    const [showButtons, setShowButtons] = useState(false);
+
+    const checkScrollability = () => {
+        if (scrollRef.current) {
+            const { scrollWidth, clientWidth } = scrollRef.current;
+            setShowButtons(scrollWidth > clientWidth);
+        }
+    };
+
+    useEffect(() => {
+        checkScrollability();
+        window.addEventListener("resize", checkScrollability);
+        return () => window.removeEventListener("resize", checkScrollability);
+    }, []);
+
+    const scrollLeft = () => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
+        }
+    };
+
+    const scrollRight = () => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+        }
+    };
+
+
     return (
         <main>
             {/* Hero Section */}
             <Hero />
             <section id="category" aria-labelledby="category-heading" className="lg:pt-[200px] md:pt-[100px] py-[150px] pb-8 lg:pb-16 w-full lg:w-[90%] mx-auto">
                 <h1 id="category-heading" className="text-3xl font-bold text-center">Browse By Type</h1>
-                <ul className="flex flex-row overflow-x-scroll gap-4  lg:gap-8 items-center mt-8 lg:mt-16">
-                    <Category text="SUV" Icon={<TbCarSuv size={40} />} />
-                    <Category text="Sedan" Icon={<FaCar size={40} />} />
-                    <Category text="Hatchback" Icon={<FaTruckPickup size={40} />} />
-                    <Category text="Coupe" Icon={<FaCarAlt size={40} />} />
-                    <Category text="Hybrid" Icon={<FaCarAlt size={40} />} />
-                    <Category text="Convertible" Icon={<FaCarAlt size={40} />} />
-                    <Category text="Van" Icon={<FaShuttleVan size={40} />} />
-                    <Category text="Truck" Icon={<CiDeliveryTruck size={40} />} />
-                    <Category text="Electric" Icon={<MdElectricCar size={40} />} />
-                </ul>
+                <div className="relative">
+                    {showButtons && (
+                        <button
+                            onClick={scrollLeft}
+                            className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-300 p-2 rounded-full"
+                        >
+                            <CgChevronLeft size={20} />
+
+                        </button>
+                    )}
+                    <ul
+                        ref={scrollRef}
+                        id="category-list"
+                        className="flex flex-row overflow-x-scroll gap-4 lg:gap-8 items-center mt-8 lg:mt-16 scrollbar-hide"
+                    >
+                        <Category text="SUV" Icon={<TbCarSuv size={40} />} />
+                        <Category text="Sedan" Icon={<FaCar size={40} />} />
+                        <Category text="Hatchback" Icon={<FaTruckPickup size={40} />} />
+                        <Category text="Coupe" Icon={<FaCarAlt size={40} />} />
+                        <Category text="Hybrid" Icon={<FaCarAlt size={40} />} />
+                        <Category text="Convertible" Icon={<FaCarAlt size={40} />} />
+                        <Category text="Van" Icon={<FaShuttleVan size={40} />} />
+                        <Category text="Truck" Icon={<CiDeliveryTruck size={40} />} />
+                        <Category text="Electric" Icon={<MdElectricCar size={40} />} />
+                    </ul>
+                    {showButtons && (
+                        <button
+                            onClick={scrollRight}
+                            className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-300 p-2 rounded-full"
+                        >
+                            <CgChevronRight size={20} />
+                        </button>
+                    )}
+                </div>
             </section>
             <Banners />
             <section id="searched-cars" aria-labelledby='searched-cars-heading' className='w-[90%] mx-auto py-4 md:py-8 lg:py-16'>
@@ -64,30 +119,30 @@ const Home = () => {
                 <h1 id='choose-us-heading' className="text-3xl font-bold text-center py-4 lg:py-8">Why Show US?</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center lg:py-16 md:py-8 py-4 gap-4">
                     <ChooseCard
-                        imgSrc={"https://demoapus1.com/boxcar/wp-content/uploads/2023/11/f1.svg"}
-                        title={"Special Financing Offers"}
-                        des={"Our stress-free finance department that can find financial solutions to save you money."}
+                        imgSrc={"/assets/dollars.png"}
+                        title={"Get the Best Price for Your Car"}
+                        des={"We offer top-dollar, fair, and competitive cash offers for your junk or used car in minutes—no waiting, no hassle!."}
                     />
                     <ChooseCard
-                        imgSrc={"https://demoapus1.com/boxcar/wp-content/uploads/2023/09/f2.svg"}
-                        title={"Trusted Car Dealership"}
-                        des={"Our stress-free finance department that can find financial solutions to save you money."}
+                        imgSrc={"/assets/fast.png"}
+                        title={"Fast, Simple & Convenient"}
+                        des={" Skip the stress of private sales. We handle everything—from free pickup to instant cash payment, with zero hidden fees."}
                     />
                     <ChooseCard
-                        imgSrc={"https://demoapus1.com/boxcar/wp-content/uploads/2023/09/f3.svg"}
-                        title={"Transparent Pricing"}
-                        des={"Our stress-free finance department that can find financial solutions to save you money."}
+                        imgSrc={"/assets/insurance.png"}
+                        title={"Safe, Secure & Reliable"}
+                        des={" We are a licensed, reputable car buyer with hundreds of satisfied sellers. No scams, no lowball offers—just a fair deal!"}
                     />
                     <ChooseCard
-                        imgSrc={"https://demoapus1.com/boxcar/wp-content/uploads/2023/09/f4.svg"}
-                        title={"Expert Car Service"}
-                        des={"Our stress-free finance department that can find financial solutions to save you money."}
+                        imgSrc={"/assets/minus.png"}
+                        title={"We Come to You – No Towing Fees!"}
+                        des={"No need to drop off your car! We offer free pickup & inspection anywhere in San Diego, making the process seamless."}
                     />
 
                 </div>
             </section>
             <section id="searched-cars" aria-labelledby='searched-cars-heading' className='w-[90%] mx-auto lg:py-16 py-4 md:py-8'>
-                <h1 id='searched-cars-heading' className="text-3xl font-bold text-center py-8">Latest Cars</h1>
+                <h1 id='searched-cars-heading' className="text-3xl font-bold text-center py-8">💰 Recently Purchased Cars – See What We Pay!</h1>
                 <Carousel
                     className='lg:py-16 md:py-8 py-4'
                     responsive={responsive}

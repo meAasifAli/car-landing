@@ -6,61 +6,22 @@ import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react
 const Contact = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [searchYear, setSearchYear] = useState("")
-    const [searchCarBrand, setSearchCarBrand] = useState("")
+    const [carBrand, setCarBrand] = useState("")
+    const [carModel, setCarModel] = useState("")
     const [selectedYear, setSelectedYear] = useState("")
-    const [selectedBrand, setSelectedBrand] = useState(null)
-    const [selectedModel, setSelectedModel] = useState(null)
+
+
     const [vehcileCondition, setVehicleCondition] = useState("")
     const [mileage, setMileage] = useState(0)
     const [keysAvailable, setKeysAvailable] = useState(false)
     const [phone, setPhone] = useState("")
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
     const [currIndex, setCurrIndex] = useState(0)
     const years = ["2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"]
-    const carBrands = [
-        { "id": 0, "name": "Toyota", "models": ["Camry", "Corolla", "RAV4", "Highlander", "Prius"] },
-        { "id": 1, "name": "Honda", "models": ["Civic", "Accord", "CR-V", "Pilot", "Fit"] },
-        { "id": 2, "name": "Ford", "models": ["Mustang", "F-150", "Explorer", "Escape", "Edge"] },
-        { "id": 3, "name": "Chevrolet", "models": ["Malibu", "Silverado", "Equinox", "Tahoe", "Camaro"] },
-        { "id": 4, "name": "BMW", "models": ["3 Series", "5 Series", "X5", "X3", "M4"] },
-        { "id": 5, "name": "Audi", "models": ["A4", "A6", "Q5", "Q7", "R8"] },
-        { "id": 6, "name": "Mercedes-Benz", "models": ["C-Class", "E-Class", "S-Class", "GLC", "GLE"] },
-        { "id": 7, "name": "Tesla", "models": ["Model S", "Model 3", "Model X", "Model Y", "Roadster"] },
-        { "id": 8, "name": "Nissan", "models": ["Altima", "Sentra", "Maxima", "Rogue", "GT-R"] },
-        { "id": 9, "name": "Hyundai", "models": ["Elantra", "Sonata", "Tucson", "Santa Fe", "Kona"] },
-        { "id": 10, "name": "Kia", "models": ["Sorento", "Sportage", "Telluride", "Optima", "Forte"] },
-        { "id": 11, "name": "Volkswagen", "models": ["Passat", "Jetta", "Tiguan", "Golf", "Atlas"] },
-        { "id": 12, "name": "Subaru", "models": ["Outback", "Forester", "Impreza", "Legacy", "WRX"] },
-        { "id": 13, "name": "Mazda", "models": ["CX-5", "Mazda3", "Mazda6", "CX-9", "MX-5 Miata"] },
-        { "id": 14, "name": "Jeep", "models": ["Wrangler", "Grand Cherokee", "Cherokee", "Compass", "Renegade"] },
-        { "id": 15, "name": "Lexus", "models": ["RX", "ES", "NX", "GX", "LS"] },
-        { "id": 16, "name": "Porsche", "models": ["911", "Cayenne", "Macan", "Panamera", "Taycan"] },
-        { "id": 17, "name": "Ferrari", "models": ["488 GTB", "Roma", "F8 Tributo", "SF90 Stradale", "Portofino"] },
-        { "id": 18, "name": "Lamborghini", "models": ["Huracán", "Aventador", "Urus", "Gallardo", "Murciélago"] },
-        { "id": 19, "name": "McLaren", "models": ["720S", "570S", "650S", "Artura", "P1"] },
-        { "id": 20, "name": "Bentley", "models": ["Continental GT", "Flying Spur", "Bentayga", "Mulsanne"] },
-        { "id": 21, "name": "Rolls-Royce", "models": ["Phantom", "Ghost", "Cullinan", "Dawn", "Wraith"] },
-        { "id": 22, "name": "Jaguar", "models": ["F-Type", "XE", "XF", "E-PACE", "F-PACE"] },
-        { "id": 23, "name": "Land Rover", "models": ["Range Rover", "Defender", "Discovery", "Evoque"] },
-        { "id": 24, "name": "Volvo", "models": ["XC90", "XC60", "S60", "V60", "XC40"] },
-        { "id": 25, "name": "Mitsubishi", "models": ["Outlander", "Pajero", "Lancer", "Eclipse Cross"] },
-        { "id": 26, "name": "Peugeot", "models": ["208", "308", "3008", "5008", "2008"] },
-        { "id": 27, "name": "Fiat", "models": ["500", "Panda", "Tipo", "500X", "124 Spider"] },
-        { "id": 28, "name": "Alfa Romeo", "models": ["Giulia", "Stelvio", "Tonale", "4C"] },
-        { "id": 29, "name": "Genesis", "models": ["G70", "G80", "G90", "GV70", "GV80"] },
-        { "id": 30, "name": "Bugatti", "models": ["Chiron", "Veyron", "Divo", "Bolide"] },
-        { "id": 31, "name": "Aston Martin", "models": ["DB11", "Vantage", "DBS", "Rapide", "Valhalla"] },
-        { "id": 32, "name": "Cadillac", "models": ["Escalade", "CT5", "XT5", "CT4", "Lyriq"] },
-        { "id": 33, "name": "Chrysler", "models": ["300", "Pacifica", "Voyager"] },
-        { "id": 34, "name": "Dodge", "models": ["Charger", "Challenger", "Durango", "Hornet"] },
-        { "id": 35, "name": "Buick", "models": ["Enclave", "Encore", "Regal", "LaCrosse"] },
-        { "id": 36, "name": "Suzuki", "models": ["Swift", "Vitara", "Jimny", "Baleno"] },
-        { "id": 37, "name": "Renault", "models": ["Clio", "Megane", "Captur", "Koleos"] },
-        { "id": 38, "name": "Citroën", "models": ["C3", "C4", "C5 Aircross", "Berlingo"] },
-        { "id": 39, "name": "Koenigsegg", "models": ["Jesko", "Regera", "Agera", "Gemera"] }
-    ]
 
     const [filteredYears, setFilteredYears] = useState(years)
-    const [filteredCars, setFilteredCars] = useState(carBrands)
+
 
 
     const handleYearSelect = (item) => {
@@ -80,33 +41,17 @@ const Contact = () => {
         setFilteredYears(filtered);
     };
 
-    const handleSearchCarBrand = (ev) => {
-        const value = ev.target.value;
-        setSearchCarBrand(value);
-
-        // Filter years based on input
-        const filtered = carBrands.filter((item) => item.name.includes(value));
-        setFilteredCars(filtered);
-    }
 
 
 
-    const handleSelectedBrand = (item) => {
-        setSelectedBrand(item)
-        setCurrIndex(2)
-    }
 
-    // console.log(selectedBrand);
 
-    const handleSelectedModel = (item) => {
-        setSelectedModel(item)
-        setCurrIndex(3)
-    }
+
 
 
     const handleSetVehcileCondition = (item) => {
         setVehicleCondition(item)
-        setCurrIndex(4)
+        setCurrIndex(3)
     }
 
     const handleSetMileage = (val) => {
@@ -115,23 +60,19 @@ const Contact = () => {
 
     const handleSetKeysAvailable = (bool) => {
         setKeysAvailable(bool)
-        setCurrIndex(6)
+        setCurrIndex(5)
     }
 
-    const handleSetPhone = (val) => {
-        setPhone(val)
-    }
 
     const handleGetOffer = () => {
         console.log("selectedYear", selectedYear);
-        console.log("selectedBrand", selectedBrand);
-        console.log("selectedModel", selectedModel);
+
         console.log("vehcileCondition", vehcileCondition);
         console.log("mileage", mileage);
         console.log("keysAvailable", keysAvailable);
         console.log(phone);
 
-        if (!selectedYear || !selectedBrand || !selectedModel || !vehcileCondition || !mileage || !keysAvailable || !phone) {
+        if (!selectedYear || !vehcileCondition || !mileage || !keysAvailable || !phone) {
             alert("Each field is required")
             return
         }
@@ -143,27 +84,27 @@ const Contact = () => {
     const handleIncrementIndex = () => {
         if (currIndex === 0) {
             selectedYear === "" ? setCurrIndex(0) : setCurrIndex(currIndex + 1)
-            alert("Please Select a year")
+            selectedYear === "" && alert("Please Select a year")
         }
-        else if (currIndex === 1) {
-            selectedBrand === null ? setCurrIndex(1) : setCurrIndex(currIndex + 1)
-            alert("please, choose any car brand")
+        else if (currIndex == 1) {
+            carBrand === "" || carModel === "" ? setCurrIndex(1) : setCurrIndex(currIndex + 1)
+            carBrand === "" || carModel === "" && alert("Please Select a car brand and model")
         }
+
         else if (currIndex === 2) {
-            selectedModel === null ? setCurrIndex(2) : setCurrIndex(currIndex + 1)
-            alert("please, choose any car model")
+            vehcileCondition === "" ? setCurrIndex(2) : setCurrIndex(currIndex + 1)
+            vehcileCondition === "" && alert("please, choose a car condition")
         }
         else if (currIndex === 3) {
-            vehcileCondition === "" ? setCurrIndex(3) : setCurrIndex(currIndex + 1)
-            alert("please, choose a car condition")
+            mileage === 0 ? setCurrIndex(3) : setCurrIndex(currIndex + 1)
+            mileage === 0 && alert("please, enter a mileage")
         }
         else if (currIndex === 4) {
-            mileage === 0 ? setCurrIndex(4) : setCurrIndex(currIndex + 1)
-            alert("please, enter a mileage")
+            keysAvailable === false ? setCurrIndex(4) : setCurrIndex(currIndex + 1)
         }
         else if (currIndex === 5) {
-            keysAvailable === false ? setCurrIndex(5) : setCurrIndex(currIndex + 1)
-            alert("please, enter a mileage")
+            phone === "" || email === "" || name === "" ? setCurrIndex(5) : setCurrIndex(currIndex + 1)
+            phone === "" || email === "" || name === "" && alert("please, enter a Phone nunmber")
         }
         else {
             setCurrIndex(currIndex + 1)
@@ -200,50 +141,25 @@ const Contact = () => {
             {
                 currIndex === 1 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
                     <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
-                        <h1 className='text-white font-medium'>Car Brand</h1>
+                        <h1 className='text-white font-medium'>Car Brand | Model</h1>
                     </div>
                     <div className='overflow-y-scroll h-[50vh] w-full'>
-                        <div className='p-4 flex items-center border-b  border-b-gray-300 '>
-                            <CiSearch size={20} color='blue' />
-                            <input value={searchCarBrand} onChange={handleSearchCarBrand} placeholder='Car Brand' className='w-full p-2 focus:outline-0' type="search" name="" id="" />
-                        </div>
-                        <ul className=' w-full border-0'>
-                            {
-                                filteredCars.map((item, id) => {
-                                    return (
-                                        <li onClick={() => handleSelectedBrand(item)} key={id} className={`${selectedBrand?.name === item.name && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>{item.name}</li>
-                                    )
-                                })
-                            }
-                        </ul>
-
+                        <form action="" className='px-4 flex flex-col gap-4 mt-8'>
+                            <div>
+                                <label htmlFor="Brand" className='text-gray-600 font-normal'>Car Brand</label>
+                                <input value={carBrand} onChange={(ev) => setCarBrand(ev.target.value)} type="text" placeholder='Car Brand' className="mt-2 w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" />
+                            </div>
+                            <div>
+                                <label htmlFor="Model" className='text-gray-600 font-normal'>Model</label>
+                                <input value={carModel} onChange={(ev) => setCarModel(ev.target.value)} type="text" placeholder='Car Model' className="mt-2 w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" />
+                            </div>
+                        </form>
                     </div>
-
                 </form>
             }
+
             {
                 currIndex === 2 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
-                    <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
-                        <h1 className='text-white font-medium'>Car Model</h1>
-                    </div>
-                    <div className='overflow-y-scroll h-[50vh] w-full'>
-
-                        <ul className=' w-full border-0'>
-                            {
-                                selectedBrand && selectedBrand?.models.map((item, id) => {
-                                    return (
-                                        <li onClick={() => handleSelectedModel(item)} key={id} className={`${item === selectedModel && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>{item}</li>
-                                    )
-                                })
-                            }
-                        </ul>
-
-                    </div>
-
-                </form>
-            }
-            {
-                currIndex === 3 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
                     <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
                         <h1 className='text-white font-medium'>Does your Vehicle start and Drive?</h1>
                     </div>
@@ -259,7 +175,7 @@ const Contact = () => {
             }
 
             {
-                currIndex === 4 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
+                currIndex === 3 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
                     <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
                         <h1 className='text-white font-medium'>Enter Your Vehcile Mileage</h1>
                     </div>
@@ -269,7 +185,7 @@ const Contact = () => {
                 </form>
             }
             {
-                currIndex === 5 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
+                currIndex === 4 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
                     <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
                         <h1 className='text-white font-medium'>Keys Available?</h1>
                     </div>
@@ -282,12 +198,29 @@ const Contact = () => {
                 </form>
             }
             {
-                currIndex === 6 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
+                currIndex === 5 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
                     <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
-                        <h1 className='text-white font-medium'>Your Phone Number?</h1>
+                        <h1 className='text-white font-medium'>Personal Information</h1>
                     </div>
-                    <div className='overflow-y-scroll h-[50vh] w-full'>
-                        <input value={phone} onChange={e => handleSetPhone(e.target.value)} placeholder='Phone Number' className='w-full p-2 focus:outline-0 border-b-[0.5px] border-b-[#ccc]' type="tel" name="" id="" />
+                    <div className=' h-[50vh]  flex flex-col gap-4 w-[90%] mx-auto py4 sm:py-6 md:py-8'>
+                        <div>
+                            <label htmlFor="phone" className='text-gray-600 font-normal'>
+                                Phone Number
+                            </label>
+                            <input id='phone' value={phone} onChange={e => setPhone(e.target.value)} placeholder='Phone Number' className="mt-2 w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" />
+                        </div>
+                        <div>
+                            <label htmlFor="name">
+                                Your Name
+                            </label>
+                            <input id="name" value={name} onChange={e => setName(e.target.value)} placeholder='Your Name' className="mt-2 w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" type="text" name="" />
+                        </div>
+                        <div>
+                            <label htmlFor="email">
+                                Email Address
+                            </label>
+                            <input id="email" value={email} onChange={e => setEmail(e.target.value)} placeholder='test123@gmail.com' className="mt-2 w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" type="email" name="" />
+                        </div>
                     </div>
                 </form>
             }
@@ -297,7 +230,7 @@ const Contact = () => {
                     prev
                 </button>
                 {
-                    currIndex === 6 ? <button onClick={handleGetOffer} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>Get an Offer</button> : <button onClick={handleIncrementIndex} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>
+                    currIndex === 5 ? <button onClick={handleGetOffer} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>Get an Offer</button> : <button onClick={handleIncrementIndex} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>
                         <FaArrowAltCircleRight size={20} />
                         next
                     </button>
@@ -306,7 +239,7 @@ const Contact = () => {
                     <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
                         <DialogPanel className="max-w-full  space-y-4 border bg-black p-12 rounded-2xl">
                             <DialogTitle className="font-bold text-white">Your Instant Offer</DialogTitle>
-                            <Description className={"text-white"}>We are ready to pick your {`${selectedBrand?.name} ${selectedModel}`}</Description>
+                            <Description className={"text-white"}>We are ready to pick your </Description>
                             <p className='text-md font-medium text-white'>we pay you</p>
                             <h1 className='font-extrabold text-5xl text-green-700'>$5000</h1>
                             <div className="flex gap-4">
