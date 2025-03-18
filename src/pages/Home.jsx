@@ -98,6 +98,47 @@ const Home = () => {
                 </div>
             </section>
             <Banners />
+            <section className='w-[90%] mx-auto py-8 md:py-8 lg:py-16 flex flex-col gap-4 lg:gap-8' id="content" aria-labelledby='content'>
+                <article>
+                    <h2 className='font-bold text-lg md:text-2xl lg:text-2xl tracking-wider'>Sell Your Car for Cash Without a Title in San Diego
+                    </h2>
+                    <p className='font-normal text-[16px] text-gray-600 py-4 leading-6 tracking-normal'>
+                        Looking to sell your car but lost the title? No problem! At Ecology Cash For Cars, we understand that paperwork can sometimes go missing. Don’t let that stop you from selling your vehicle. Simply give us a call and let us know what documents you have. In most cases, a valid ID and a current or expired registration are enough to complete the sale. Unlike other competitors who may tell you that selling without a title is impossible, we work with you to ensure a smooth process. Get in touch today and get top cash for your car!
+
+                    </p>
+                </article>
+                <article>
+                    <h2 className='font-bold text-lg md:text-2xl lg:text-2xl tracking-wider'>Sell Your Car Without a Smog Check in San Diego
+                    </h2>
+                    <p className='font-normal text-[16px] text-gray-600 py-4 leading-6 tracking-normal'>
+                        Failed your smog test and don’t want to spend more money on repairs? You’re not alone! Many car owners choose to sell their vehicles after a failed smog check, and we are here to help. At Ecology Cash For Cars, we specialize in buying cars that have not passed smog inspections. Our environmentally friendly junk car program ensures your old vehicle is removed responsibly while putting cash in your pocket. Stop worrying about costly repairs and call us today to sell your car fast, even without a smog certificate.
+                    </p>
+                </article>
+                <article>
+                    <h2 className='font-bold text-lg md:text-2xl lg:text-2xl tracking-wider'>Who Buys Junk Cars in San Diego?
+                    </h2>
+                    <p className='font-normal text-[16px] text-gray-600 py-4 leading-6 tracking-normal'>
+                        If you're wondering where to sell your junk car in San Diego, look no further! Ecology Cash For Cars pays top dollar for unwanted vehicles. Our process is simple: we evaluate your car, make a fair cash offer, and handle everything from paperwork to towing. Whether your car is wrecked, non-running, or simply old, we’ll take it off your hands quickly and efficiently.
+                    </p>
+                </article>
+                <article>
+                    <h2 className='font-bold text-lg md:text-2xl lg:text-2xl tracking-wider'>Best Cash for Cars in San Diego – We Pay the Most!
+
+                    </h2>
+                    <p className='font-normal text-[16px] text-gray-600 py-4 leading-6 tracking-normal'>
+                        We take pride in being one of the most trusted cash-for-cars services in San Diego. With hundreds of satisfied customers, we ensure a hassle-free experience. Simply fill out our online quote request form or call us for an instant quote. Our car buyers will come to your location, inspect the car, and pay you cash on the spot. Sell your junk car today and contribute to a cleaner, greener environment while making instant money!
+                        in San Diego
+                    </p>
+                </article>
+                <article>
+                    <h2 className='font-bold text-lg md:text-2xl lg:text-2xl tracking-wider'>Get Fast Cash for Cars in San Diego
+
+                    </h2>
+                    <p className='font-normal text-[16px] text-gray-600 py-4 leading-6 tracking-normal'>
+                        Tired of receiving lowball offers from other junk car buyers? Ecology Cash For Cars guarantees the highest cash offers in San Diego. We pay what your car is worth—no hidden fees or gimmicks. Our same-day car buying service ensures you get cash in hand without any hassle. Call us now and sell your unwanted car today!
+                    </p>
+                </article>
+            </section>
             <section id="searched-cars" aria-labelledby='searched-cars-heading' className='w-[90%] mx-auto py-4 md:py-8 lg:py-16'>
                 <h1 id='searched-cars-heading' className="text-3xl font-bold text-center py-8">Most Searched Cars</h1>
                 <Carousel

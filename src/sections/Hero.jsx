@@ -23,7 +23,7 @@ const Hero = () => {
                     >
                         Sell Your Junk or Used Car in San Diego – Get Paid Instantly!
                     </h1>
-                    <span className="lg:text-sm text-xs max-w-[600px] text-start font-normal text-gray-600  ">Got an old, damaged, or unwanted car? We buy junk and second-hand cars in San Diego for top dollar – and we make it EASY. No haggling, no waiting, no hidden fees.</span>
+                    <span className="lg:text-sm text-xs max-w-[600px] text-start font-normal text-gray-600 z-50 ">Got a junk or second-hand car you no longer need? We make selling your car quick, easy, and hassle-free! No haggling, no long waits, and absolutely no hidden fees—just fast cash for your car with free towing included. Whether it’s wrecked, non-running, or simply unwanted, we’ll give you a fair offer on the spot. Sell your car today and get instant cash with San Diego’s most trusted car buyers!</span>
                 </div>
 
 
@@ -131,7 +131,7 @@ const Hero = () => {
                     </fieldset>
                 </form>
             </article>
-            <img className="absolute -bottom-[20%] lg:-bottom-[30%] h-[420px] lg:h-[65%] w-full object-contain z-0" src="/assets/car.png" alt="bgimage" />
+            <img className="absolute -bottom-[20%] lg:-bottom-[25%] h-[420px] lg:h-[45%] w-full object-contain z-0" src="https://demoapus1.com/boxcar/wp-content/uploads/2023/11/slider51.png" alt="bgimage" />
         </header>
     );
 };

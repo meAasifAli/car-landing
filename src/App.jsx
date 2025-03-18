@@ -6,6 +6,7 @@ import { IoIosCall } from "react-icons/io";
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Services from './pages/Services';
+import GooeyNav from './components/GoovyNav';
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
                 <IoIosCall className='text-xl text-white' />
                 <a href="tel:+9111111111" className='text-lg text-white'>+91-8081785613</a>
             </div>
+
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />
