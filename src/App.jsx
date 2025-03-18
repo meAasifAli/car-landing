@@ -6,7 +6,7 @@ import { IoIosCall } from "react-icons/io";
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Services from './pages/Services';
-import GooeyNav from './components/GoovyNav';
+
 
 
 const App = () => {
@@ -30,8 +30,8 @@ const App = () => {
                 <Route path='/services' element={<Services />} />
                 <Route path='/contact' element={<Contact />} />
             </Routes>
-            <footer>
-                <div className='border-[0.5px] border-[#ccc] lg:h-[50vh] grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center w-full pt-16'>
+            <footer className='bg-black text-white'>
+                <div className='border-b-[0.5px] border-b-[#ccc] lg:h-[50vh] grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center w-full pt-16'>
                     <div className='flex flex-col gap-4'>
                         <h1 className='text-xl font-medium'>Company</h1>
                         <a href="#" className='text-sm font-normal'>about us</a>
