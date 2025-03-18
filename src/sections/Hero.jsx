@@ -1,4 +1,5 @@
 import React from "react";
+import { FaStar } from "react-icons/fa";
 
 
 const Hero = () => {
@@ -11,7 +12,16 @@ const Hero = () => {
         >
             <article className="flex flex-col md:flex-row gap-4 lg:gap-8 md:justify-between justify-center items-center text-center w-[90%] mx-auto">
                 <div className="flex flex-col justify-start items-start w-full">
-
+                    <div className="flex flex-row items-center gap-2">
+                        <div className="flex flex-row items-center gap-2">
+                            <FaStar size={20} />
+                            <FaStar size={20} />
+                            <FaStar size={20} />
+                            <FaStar size={20} />
+                            <FaStar size={20} />
+                        </div>
+                        <span className="text-sm font-normal text-gray-600">4.8 (1,000+ reviews)</span>
+                    </div>
                     {/* Supporting Text */}
                     <span className="text-md text-start md:text-lg font-normal text-gray-600 ">
                         Free Pickup | Instant Offer | Hassle-Free Process.
