@@ -1,37 +1,37 @@
 import React from 'react'
 import { BsFillFuelPumpDieselFill } from 'react-icons/bs'
-import { GiGearStickPattern } from 'react-icons/gi'
+import { CiLocationOn } from 'react-icons/ci'
 import { IoIosSpeedometer } from 'react-icons/io'
 
 
-const Car = () => {
+const Car = ({ title, des, miles, fuelType, location, marketPrice, ourPrice }) => {
     return (
         <div className='w-[350px] mr-6 h-[500px] rounded-2xl'>
             <img className='w-full h-[200px] object-cover rounded-t-2xl' src="/assets/car1.jpg" alt="car 1" />
             <div className='pt-4 bg-black px-6 flex flex-col justify-center items-start rounded-b-2xl'>
-                <h2 className='text-white font-medium text-lg text-center'>BMW 5</h2>
-                <p className='text-white font-normal text-sm text-start'>523 hp (M550i xDrive), Mileage of around 25-30 mpg</p>
+                <h2 className='text-white font-medium text-lg text-center'>{title}</h2>
+                <p className='text-white font-normal text-sm text-start'>{des}</p>
                 <div className='flex justify-between items-center w-full mt-4'>
                     <div>
                         <IoIosSpeedometer size={30} color='#fff' />
-                        <h2 className='text-white font-normal text-sm mt-2'>20 Miles</h2>
+                        <h2 className='text-white font-normal text-sm mt-2'>{miles}</h2>
                     </div>
                     <div>
                         <BsFillFuelPumpDieselFill size={30} color='#fff' />
-                        <h2 className='text-white font-normal text-sm mt-2'>Petrol</h2>
+                        <h2 className='text-white font-normal text-sm mt-2'>{fuelType}</h2>
                     </div>
                     <div>
-                        <GiGearStickPattern size={30} color='#fff' />
-                        <h2 className='text-white font-normal text-sm mt-2'>Manual</h2>
+                        <CiLocationOn size={30} color='#fff' />
+                        <h2 className='text-white font-normal text-sm mt-2'>{location}</h2>
                     </div>
                 </div>
                 <div className='flex justify-between items-center w-full mt-4 pb-4'>
                     <div>
 
-                        <h1 className='text-white font-bold text-xl mt-2'>$3500</h1>
+                        <h1 className='text-white font-bold text-xl mt-2'>{`$${marketPrice}`}</h1>
                     </div>
                     <button className='flex items-center gap-4 bg-[#425bac] py-2 px-2 rounded-lg'>
-                        <h2 className='text-white font-normal text-sm mt-2'>Our Price | $4000</h2>
+                        <h2 className='text-white font-normal text-sm '>Our Price | {`$${ourPrice}`}</h2>
                     </button>
                 </div>
             </div>

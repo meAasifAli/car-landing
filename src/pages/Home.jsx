@@ -12,6 +12,9 @@ import Hero from '../sections/Hero';
 import { useEffect, useRef, useState } from 'react';
 import { CgChevronLeft, CgChevronRight } from 'react-icons/cg';
 import Testimonial from '../components/Testimonial';
+import { cars, locations } from '../static/data';
+import { CiLocationOn } from "react-icons/ci";
+
 const Home = () => {
     const scrollRef = useRef(null)
     const responsive = {
@@ -139,7 +142,7 @@ const Home = () => {
                     </p>
                 </article>
             </section>
-            <section id="searched-cars" aria-labelledby='searched-cars-heading' className='w-[90%] mx-auto py-4 md:py-8 lg:py-16'>
+            <section id="searched-cars" aria-labelledby='searched-cars-heading' className='w-[90%] mx-auto py-4 '>
                 <h1 id='searched-cars-heading' className="text-3xl font-bold text-center py-8">Most Searched Cars</h1>
                 <Carousel
                     className='lg:py-16 md:py-8 py-4'
@@ -148,13 +151,17 @@ const Home = () => {
                     autoPlay
 
                 >
-                    <Car />
+                    {
+                        cars.map((item, id) => (
+                            <Car key={id} title={item.title} des={item.title} fuelType={item.fuelType} location={item.location} marketPrice={item.marketOffer} ourPrice={item.ourOffer} miles={item.miles} />
+                        ))
+                    }
 
                 </Carousel>
             </section>
             <section id="choose-us" aria-labelledby='choose-us-heading' className='w-[90%] mx-auto '>
-                <h1 id='choose-us-heading' className="text-3xl font-bold text-center py-4 lg:py-8">Why Show US?</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center lg:py-16 md:py-8 py-4 gap-4">
+                <h1 id='choose-us-heading' className="text-3xl font-bold text-center py-4 ">Why Show US?</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center  gap-4 mt-4">
                     <ChooseCard
                         imgSrc={"/assets/dollars.png"}
                         title={"Get the Best Price for Your Car"}
@@ -240,14 +247,19 @@ const Home = () => {
                 </Carousel>
             </section>
 
-            {/* <section id='car-locations' aria-labelledby='car-locations' className='py-16'>
+            <section id='car-locations' aria-labelledby='car-locations' className='py-16'>
                 <h1 className='text-3xl font-bold tracking-wider leading-10 text-center mt-8 underline'>We Buy Cars in all these cities</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
-                    <ul>
-                        <li></li>
-                    </ul>
-                </div>
-            </section> */}
+                <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-2 gap-4 mt-8 mx-auto w-full lg:w-[90%] py-8">
+
+                    {locations?.map((location, index) => (
+                        <li key={index} className="flex items-center space-x-2">
+                            <CiLocationOn size={20} />
+                            <span>{location}</span>
+                        </li>
+                    ))}
+
+                </ul>
+            </section>
             <section id="blogs" aria-labelledby='blogs' className='bg-blue-100 h-screen flex  flex-col lg:flex-row justify-center lg:justify-between md:px-8 px-4 lg:px-16 items-center py-4'>
                 <div>
                     <h3 className='text-3xl font-bold tracking-widest leading-10'>Explore Our Premium Brands</h3>
