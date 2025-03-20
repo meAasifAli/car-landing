@@ -7,7 +7,7 @@ const Chooseus = () => {
             <h1 id='choose-us-heading' className="lg:text-3xl md:text-2xl sm:tex-xl text-xl font-bold text-center py-4 lg:py-16 text-white">Why Show US?</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center  gap-4 mt-4 w-[90%] mx-auto">
                 <ChooseCard
-                    imgSrc={"https://cdn-icons-mp4.flaticon.com/512/16072/16072612.mp4"}
+                    imgSrc={"https://cdn-icons-mp4.flaticon.com/512/12147/12147233.mp4"}
                     title={"Get the Best Price for Your Car"}
                     des={"We offer top-dollar, fair, and competitive cash offers for your junk or used car in minutes—no waiting, no hassle!."}
                 />
@@ -22,7 +22,7 @@ const Chooseus = () => {
                     des={" We are a licensed, reputable car buyer with hundreds of satisfied sellers. No scams, no lowball offers—just a fair deal!"}
                 />
                 <ChooseCard
-                    imgSrc={"https://cdn-icons-mp4.flaticon.com/512/12147/12147233.mp4"}
+                    imgSrc={"https://cdn-icons-mp4.flaticon.com/512/16072/16072612.mp4"}
                     title={"We Come to You – No Towing Fees!"}
                     des={"No need to drop off your car! We offer free pickup & inspection anywhere in San Diego, making the process seamless."}
                 />

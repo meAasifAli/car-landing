@@ -2,6 +2,8 @@ import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { IoIosCall } from "react-icons/io";
+
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,6 +27,16 @@ const Navbar = () => {
                         <div className="absolute -bottom-1 left-0 h-1 bg-blue-300 w-0 group-hover:w-full transition-all duration-300"></div>
                     </li>
                 ))}
+                <li role="button" className="relative group list-none bg-blue-900 text-white px-4 py-2 rounded-md">
+                    <a
+                        href="tel:+2348100000000"
+                        className="font-sans font-normal text-sm focus:outline-none"
+                    >
+                        <IoIosCall size={20} color="#fff" className="inline-block mr-2" />
+                        <span className="text-sm tex-white">+2348100000000</span>
+                    </a>
+
+                </li>
             </nav>
 
             {/* Mobile Menu Toggle */}

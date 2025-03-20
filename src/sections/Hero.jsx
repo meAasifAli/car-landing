@@ -136,7 +136,7 @@ const Hero = () => {
 
             {/* Background Image */}
             <img
-                className="hidden sm:flex absolute z-0 -bottom-40 h-56 md:h-72 lg:h-80 w-full object-contain"
+                className="hidden sm:flex absolute z-0 -bottom-40 h-56 md:h-72 lg:h-96 w-full object-contain"
                 src="https://demoapus1.com/boxcar/wp-content/uploads/2023/11/slider51.png"
                 alt="Background image of a car"
                 loading="lazy"

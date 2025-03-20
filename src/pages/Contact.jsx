@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { CiSearch } from 'react-icons/ci'
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { CiLocationOn, CiMail, CiSearch } from 'react-icons/ci'
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaPhone } from "react-icons/fa";
 import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import { IoIosCall } from 'react-icons/io';
+
 
 const Contact = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -113,143 +115,329 @@ const Contact = () => {
 
 
     return (
-        <div className='flex flex-col justify-center items-center h-screen'>
-            {
-                currIndex === 0 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
-                    <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
-                        <h1 className='text-white font-medium'>Car Make</h1>
-                    </div>
-                    <div className='overflow-y-scroll h-[50vh] w-full'>
-                        <div className='p-4 flex items-center border-b  border-b-gray-300 '>
-                            <CiSearch size={20} color='blue' />
-                            <input value={searchYear} onChange={handleSearchYear} placeholder='Car Make' className='w-full p-2 focus:outline-0' type="search" name="" id="" />
-                        </div>
-                        <ul className=' w-full border-0'>
-                            {
-                                filteredYears.map((item, id) => {
-                                    return (
-                                        <li onClick={() => handleYearSelect(item)} key={id} className={`${selectedYear === item && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>{item}</li>
-                                    )
-                                })
-                            }
-                        </ul>
+        <div className='flex flex-col items-center justify-center w-full bg-gray-50'>
+            <section
+                id="contact-hero"
+                className="w-full h-screen flex flex-col justify-center items-center text-center relative px-6 sm:px-10"
+            >
+                {/* Background Overlay */}
+                <div className="absolute inset-0 bg-black/80"></div>
 
-                    </div>
+                {/* Content */}
+                <div className="relative z-10 text-white max-w-3xl">
+                    <h1 className="text-3xl sm:text-5xl font-bold mb-4">
+                        Sell Your Car Fast & Hassle-Free
+                    </h1>
+                    <p className="text-base sm:text-lg text-gray-200 mb-6">
+                        Get an instant offer and sell your car with ease. No hidden fees, no
+                        unnecessary paperwork—just a quick and easy process!
+                    </p>
 
-                </form>
-            }
-            {
-                currIndex === 1 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
-                    <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
-                        <h1 className='text-white font-medium'>Car Brand | Model</h1>
-                    </div>
-                    <div className='overflow-y-scroll h-[50vh] w-full'>
-                        <form action="" className='px-4 flex flex-col gap-4 mt-8'>
-                            <div>
-                                <label htmlFor="Brand" className='text-gray-600 font-normal'>Car Brand</label>
-                                <input value={carBrand} onChange={(ev) => setCarBrand(ev.target.value)} type="text" placeholder='Car Brand' className="mt-2 w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" />
-                            </div>
-                            <div>
-                                <label htmlFor="Model" className='text-gray-600 font-normal'>Model</label>
-                                <input value={carModel} onChange={(ev) => setCarModel(ev.target.value)} type="text" placeholder='Car Model' className="mt-2 w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" />
-                            </div>
-                        </form>
-                    </div>
-                </form>
-            }
-
-            {
-                currIndex === 2 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
-                    <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
-                        <h1 className='text-white font-medium'>Does your Vehicle start and Drive?</h1>
-                    </div>
-                    <div className='overflow-y-scroll h-[50vh] w-full'>
-                        <ul className=' w-full border-0'>
-                            <li onClick={() => handleSetVehcileCondition("startsanddrives")} className={`${vehcileCondition === "startsanddrives" && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>Starts And Drives</li>
-                            <li onClick={() => handleSetVehcileCondition("startsbutdoesnotdrive")} className={`${vehcileCondition === "startsbutdoesnotdrive" && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>Starts But Doesn't Drive</li>
-                            <li onClick={() => handleSetVehcileCondition("doesnotstart")} className={`${vehcileCondition === "doesnotstart" && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>Doesn't Start</li>
-                        </ul>
-                    </div>
-
-                </form>
-            }
-
-            {
-                currIndex === 3 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
-                    <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
-                        <h1 className='text-white font-medium'>Enter Your Vehcile Mileage</h1>
-                    </div>
-                    <div className='overflow-y-scroll h-[50vh] w-full'>
-                        <input value={mileage} onChange={e => handleSetMileage(e.target.value)} placeholder='Vehcile Mileage (miles)' className='w-full p-2 focus:outline-0 border-b-[0.5px] border-b-[#ccc] ' type="number" name="" id="" />
-                    </div>
-                </form>
-            }
-            {
-                currIndex === 4 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
-                    <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
-                        <h1 className='text-white font-medium'>Keys Available?</h1>
-                    </div>
-                    <div className='overflow-y-scroll h-[50vh] w-full'>
-                        <ul className='w-full border-0'>
-                            <li onClick={() => handleSetKeysAvailable(true)} className={`${keysAvailable && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>Yes</li>
-                            <li onClick={() => handleSetKeysAvailable(false)} className={`${!keysAvailable && "bg-blue-500 text-white"} py-4 px-2 border-gray-300 hover:bg-blue-400 hover:text-white cursor-pointer`}>No</li>
-                        </ul>
-                    </div>
-                </form>
-            }
-            {
-                currIndex === 5 && <form className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto shadow-lg rounded-2xl'>
-                    <div className='bg-blue-400 w-full lg:p-4 p-2 rounded-t-2xl'>
-                        <h1 className='text-white font-medium'>Personal Information</h1>
-                    </div>
-                    <div className=' h-[50vh]  flex flex-col gap-4 w-[90%] mx-auto py4 sm:py-6 md:py-8'>
-                        <div>
-                            <label htmlFor="phone" className='text-gray-600 font-normal'>
-                                Phone Number
-                            </label>
-                            <input id='phone' value={phone} onChange={e => setPhone(e.target.value)} placeholder='Phone Number' className="mt-2 w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" />
-                        </div>
-                        <div>
-                            <label htmlFor="name">
-                                Your Name
-                            </label>
-                            <input id="name" value={name} onChange={e => setName(e.target.value)} placeholder='Your Name' className="mt-2 w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" type="text" name="" />
-                        </div>
-                        <div>
-                            <label htmlFor="email">
-                                Email Address
-                            </label>
-                            <input id="email" value={email} onChange={e => setEmail(e.target.value)} placeholder='test123@gmail.com' className="mt-2 w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-50 transition-all" type="email" name="" />
-                        </div>
-                    </div>
-                </form>
-            }
-            <div className='lg:w-[50%] md:w-[50%] w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between py-8'>
-                <button onClick={() => setCurrIndex(pre => pre - 1)} disabled={currIndex === 0} className='disabled:bg-gray-200 bg-black p-2 text-white rounded-lg flex items-center gap-2'>
-                    <FaArrowAltCircleLeft size={20} />
-                    prev
-                </button>
-                {
-                    currIndex === 5 ? <button onClick={handleGetOffer} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>Get an Offer</button> : <button onClick={handleIncrementIndex} className='bg-black p-2 text-white rounded-lg flex items-center gap-2'>
-                        <FaArrowAltCircleRight size={20} />
-                        next
+                    {/* Call-to-Action */}
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-md transition-all">
+                        Get Your Instant Offer
                     </button>
-                }
-                <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50 ">
-                    <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-                        <DialogPanel className="max-w-full  space-y-4 border bg-black p-12 rounded-2xl">
-                            <DialogTitle className="font-bold text-white">Your Instant Offer</DialogTitle>
-                            <Description className={"text-white"}>We are ready to pick your </Description>
-                            <p className='text-md font-medium text-white'>we pay you</p>
-                            <h1 className='font-extrabold text-5xl text-green-700'>$5000</h1>
-                            <div className="flex gap-4">
-                                <button className='bg-red-700 text-white p-2' onClick={() => setIsOpen(false)}>Cancel offer</button>
-                                <button className='bg-blue-500 text-white p-2' onClick={() => setIsOpen(false)}>Accept offer</button>
-                            </div>
-                        </DialogPanel>
+                </div>
+            </section>
+
+            {/* Benefits Section */}
+            <section className="py-16 px-6 sm:px-12 bg-gray-100">
+                <div className="max-w-6xl mx-auto text-center">
+                    <h2 className="text-2xl sm:text-4xl font-bold mb-6 text-gray-900">
+                        Why Sell With Us?
+                    </h2>
+                    <p className="text-base sm:text-lg text-gray-700 mb-8">
+                        We make selling your car easy, transparent, and rewarding.
+                    </p>
+
+                    {/* Responsive Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {/* Feature 1 */}
+                        <div className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center text-center">
+                            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                                Instant Cash Offer
+                            </h3>
+                            <p className="text-sm sm:text-base text-gray-600">
+                                Get a competitive, no-obligation offer for your car within minutes.
+                            </p>
+                        </div>
+
+                        {/* Feature 2 */}
+                        <div className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center text-center">
+                            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                                Hassle-Free Process
+                            </h3>
+                            <p className="text-sm sm:text-base text-gray-600">
+                                We handle all paperwork and pickup—zero stress for you.
+                            </p>
+                        </div>
+
+                        {/* Feature 3 */}
+                        <div className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center text-center">
+                            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                                Secure & Fast Payment
+                            </h3>
+                            <p className="text-sm sm:text-base text-gray-600">
+                                Get paid quickly and securely with no hidden fees or deductions.
+                            </p>
+                        </div>
                     </div>
-                </Dialog>
+                </div>
+            </section>
+
+
+
+
+            {/* Main Content */}
+            <div className='flex flex-col lg:flex-row items-start justify-center max-w-7xl mx-auto gap-8 p-4 sm:p-8 w-full'>
+                {/* Form Section */}
+                <div className='flex-1 w-full lg:w-2/3'>
+                    <div className='bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl'>
+                        {/* Form Header */}
+                        <div className='bg-gradient-to-r from-blue-900 to-blue-700 w-full p-6 rounded-t-2xl'>
+                            <h1 className='text-white font-semibold text-xl'>
+                                {currIndex === 0 && "Car Make"}
+                                {currIndex === 1 && "Car Brand | Model"}
+                                {currIndex === 2 && "Does your Vehicle start and Drive?"}
+                                {currIndex === 3 && "Enter Your Vehicle Mileage"}
+                                {currIndex === 4 && "Keys Available?"}
+                                {currIndex === 5 && "Personal Information"}
+                            </h1>
+                        </div>
+
+                        {/* Form Content */}
+                        <div className='overflow-y-auto h-[50vh] p-6'>
+                            {currIndex === 0 && (
+                                <div>
+                                    <div className='flex items-center border-b border-gray-200 pb-4'>
+                                        <CiSearch size={20} className='text-blue-600' />
+                                        <input
+                                            value={searchYear}
+                                            onChange={handleSearchYear}
+                                            placeholder='Search Car Make'
+                                            className='w-full p-2 focus:outline-none placeholder-gray-400'
+                                            type='search'
+                                        />
+                                    </div>
+                                    <ul className='mt-4 space-y-2'>
+                                        {filteredYears.map((item, id) => (
+                                            <li
+                                                key={id}
+                                                onClick={() => handleYearSelect(item)}
+                                                className={`${selectedYear === item
+                                                    ? "bg-blue-600 text-white"
+                                                    : "bg-gray-50 hover:bg-blue-100"
+                                                    } py-3 px-4 rounded-lg cursor-pointer transition-all duration-200`}
+                                            >
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {currIndex === 1 && (
+                                <form className='space-y-6'>
+                                    <div>
+                                        <label htmlFor='brand' className='block text-gray-700 font-medium mb-2'>
+                                            Car Brand
+                                        </label>
+                                        <input
+                                            id='brand'
+                                            value={carBrand}
+                                            onChange={(ev) => setCarBrand(ev.target.value)}
+                                            placeholder='Enter Car Brand'
+                                            className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all'
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor='model' className='block text-gray-700 font-medium mb-2'>
+                                            Model
+                                        </label>
+                                        <input
+                                            id='model'
+                                            value={carModel}
+                                            onChange={(ev) => setCarModel(ev.target.value)}
+                                            placeholder='Enter Car Model'
+                                            className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all'
+                                        />
+                                    </div>
+                                </form>
+                            )}
+
+                            {currIndex === 2 && (
+                                <ul className='space-y-2'>
+                                    {[
+                                        { value: "startsanddrives", label: "Starts And Drives" },
+                                        { value: "startsbutdoesnotdrive", label: "Starts But Doesn't Drive" },
+                                        { value: "doesnotstart", label: "Doesn't Start" },
+                                    ].map((option, id) => (
+                                        <li
+                                            key={id}
+                                            onClick={() => handleSetVehcileCondition(option.value)}
+                                            className={`${vehcileCondition === option.value
+                                                ? "bg-blue-600 text-white"
+                                                : "bg-gray-50 hover:bg-blue-100"
+                                                } py-3 px-4 rounded-lg cursor-pointer transition-all duration-200`}
+                                        >
+                                            {option.label}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+
+                            {currIndex === 3 && (
+                                <input
+                                    value={mileage}
+                                    onChange={(e) => handleSetMileage(e.target.value)}
+                                    placeholder='Vehicle Mileage (miles)'
+                                    className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all'
+                                    type='number'
+                                />
+                            )}
+
+                            {currIndex === 4 && (
+                                <ul className='space-y-2'>
+                                    {[
+                                        { value: true, label: "Yes" },
+                                        { value: false, label: "No" },
+                                    ].map((option, id) => (
+                                        <li
+                                            key={id}
+                                            onClick={() => handleSetKeysAvailable(option.value)}
+                                            className={`${keysAvailable === option.value
+                                                ? "bg-blue-600 text-white"
+                                                : "bg-gray-50 hover:bg-blue-100"
+                                                } py-3 px-4 rounded-lg cursor-pointer transition-all duration-200`}
+                                        >
+                                            {option.label}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+
+                            {currIndex === 5 && (
+                                <form className='space-y-6'>
+                                    <div>
+                                        <label htmlFor='phone' className='block text-gray-700 font-medium mb-2'>
+                                            Phone Number
+                                        </label>
+                                        <input
+                                            id='phone'
+                                            value={phone}
+                                            onChange={(e) => setPhone(e.target.value)}
+                                            placeholder='Enter Phone Number'
+                                            className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all'
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor='name' className='block text-gray-700 font-medium mb-2'>
+                                            Your Name
+                                        </label>
+                                        <input
+                                            id='name'
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            placeholder='Enter Your Name'
+                                            className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all'
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor='email' className='block text-gray-700 font-medium mb-2'>
+                                            Email Address
+                                        </label>
+                                        <input
+                                            id='email'
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            placeholder='Enter Email Address'
+                                            className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all'
+                                            type='email'
+                                        />
+                                    </div>
+                                </form>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Navigation Buttons */}
+                    <div className='w-full flex justify-between mt-8'>
+                        <button
+                            onClick={() => setCurrIndex((prev) => prev - 1)}
+                            disabled={currIndex === 0}
+                            className='disabled:bg-gray-300 disabled:cursor-not-allowed bg-black text-white px-6 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition-all'
+                        >
+                            <FaArrowAltCircleLeft size={20} />
+                            Prev
+                        </button>
+                        {currIndex === 5 ? (
+                            <button
+                                onClick={handleGetOffer}
+                                className='bg-blue-600 text-white px-6 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-all'
+                            >
+                                Get an Offer
+                            </button>
+                        ) : (
+                            <button
+                                onClick={handleIncrementIndex}
+                                className='bg-black text-white px-6 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition-all'
+                            >
+                                Next
+                                <FaArrowAltCircleRight size={20} />
+                            </button>
+                        )}
+                        <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50 ">
+                            <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+                                <DialogPanel className="max-w-full  space-y-4 border bg-black p-12 rounded-2xl">
+                                    <DialogTitle className="font-bold text-white">Your Instant Offer</DialogTitle>
+                                    <Description className={"text-white"}>We are ready to pick your </Description>
+                                    <p className='text-md font-medium text-white'>we pay you</p>
+                                    <h1 className='font-extrabold text-5xl text-green-700'>$5000</h1>
+                                    <div className="flex gap-4">
+                                        <button className='bg-red-700 text-white p-2' onClick={() => setIsOpen(false)}>Cancel offer</button>
+                                        <button className='bg-blue-500 text-white p-2' onClick={() => setIsOpen(false)}>Accept offer</button>
+                                    </div>
+                                </DialogPanel>
+                            </div>
+                        </Dialog>
+                    </div>
+                </div>
+
+                {/* Contact Section */}
+                <div className='flex-1 w-full lg:w-1/3 bg-white p-6 rounded-2xl shadow-xl'>
+                    <h1 className='text-2xl font-bold text-gray-800'>Interested to Sell Your Car?</h1>
+                    <p className='text-gray-500 mt-2'>We are ready to pick your car</p>
+                    <ul className='mt-6 space-y-4'>
+                        <li className='flex items-center gap-4'>
+                            <CiLocationOn className='text-blue-600 text-xl' />
+                            <span className='text-gray-700'>123 Main St, San Diego, USA</span>
+                        </li>
+                        <li className='flex items-center gap-4'>
+                            <IoIosCall className='text-blue-600 text-xl' />
+                            <a href='tel:+1234567890' className='text-gray-700 hover:text-blue-600'>
+                                +1234567890
+                            </a>
+                        </li>
+                        <li className='flex items-center gap-4'>
+                            <CiMail className='text-blue-600 text-xl' />
+                            <a href='mailto:ecologycash4car.com' className='text-gray-700 hover:text-blue-600'>
+                                ecologycash4car.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
+            {/* Call-to-Action Section */}
+            <section className='w-full bg-gradient-to-r from-blue-900 to-blue-700 py-12 text-center'>
+                <h2 className='text-3xl font-bold text-white mb-4'>Ready to Sell Your Car?</h2>
+                <p className='text-lg text-gray-200 mb-6'>Get an instant offer today!</p>
+                <button
+                    className='bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all'
+                >
+                    Get Started
+                </button>
+            </section>
         </div>
     )
 }

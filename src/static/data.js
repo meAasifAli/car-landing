@@ -7,7 +7,7 @@ export const cars = [
         miles: 140500,
         fuelType: "Gasoline",
         location: "San Diego",
-        imgSrc: "/assets/car1.jpg",
+        imgSrc: "/assets/car8.png",
         des: "✅ Toyota Corolla 2010 (Automatic) – Purchased"
     },
     {
@@ -18,7 +18,7 @@ export const cars = [
         miles: 160300,
         fuelType: "Gasoline",
         location: "San Diego",
-        imgSrc: "/assets/car2.png",
+        imgSrc: "/assets/car7.png",
         des: "✅ Honda Civic 2008 (Automatic) – Purchased"
     },
     {
@@ -40,7 +40,7 @@ export const cars = [
         miles: 180450,
         fuelType: "Gasoline",
         location: "San Diego",
-        imgSrc: "/assets/car4.png",
+        imgSrc: "/assets/car5.png",
         des: "✅ Nissan Altima 2005 (Manual) – Purchased"
     },
     {
@@ -51,7 +51,7 @@ export const cars = [
         miles: 112500,
         fuelType: "Gasoline",
         location: "San Diego",
-        imgSrc: "/assets/car5.png",
+        imgSrc: "/assets/car1.jpg",
         des: "✅ BMW 3 Series 2011 (Manual) – Purchased"
     },
     {
@@ -62,7 +62,7 @@ export const cars = [
         miles: 150400,
         fuelType: "Gasoline",
         location: "San Diego",
-        imgSrc: "/assets/car6.png",
+        imgSrc: "/assets/car10.png",
         des: "✅ Chevrolet Silverado 2007 (Manual) – Purchased"
     },
     {
@@ -73,7 +73,7 @@ export const cars = [
         miles: 100200,
         fuelType: "Gasoline",
         location: "San Diego",
-        imgSrc: "/assets/car7.png",
+        imgSrc: "/assets/car9.png",
         des: "✅ Toyota Camry 2013 (Manual) – Purchased"
     },
     {
@@ -95,7 +95,7 @@ export const cars = [
         miles: 98350,
         fuelType: "Gasoline",
         location: "San Diego",
-        imgSrc: "/assets/car9.png",
+        imgSrc: "/assets/car6.png",
         des: "✅ Dodge Charger 2014  (Manual) – Purchased"
     },
     {
@@ -106,7 +106,7 @@ export const cars = [
         miles: 140600,
         fuelType: "Gasoline",
         location: "San Diego",
-        imgSrc: "/assets/car10.png",
+        imgSrc: "/assets/car5.png",
         des: "✅ Honda Accord 2009  (Manual) – Purchased"
     },
 

@@ -14,3 +14,17 @@
 .testimonail-des {
   font-style: italic;
 }
+
+#contact-hero {
+  background: url("/assets/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
