@@ -9,9 +9,9 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="flex justify-between items-center w-[90%] mx-auto h-[80px] py-2 lg:py-4 relative">
+        <header className="flex justify-between items-center w-full lg:w-[90%] mx-auto h-30 py-2 lg:py-4 relative">
             <a href="/" className="focus:outline-none">
-                <h1 className="font-bold text-lg md:text-lg lg:text-xl">EcologyCash4Car</h1>
+                <img src="/assets/logo2.png" alt="logo" className="lg:w-50 w-30 h-15 lg:h-20 object-cover" />
             </a>
 
             {/* Desktop Navigation */}
@@ -27,13 +27,13 @@ const Navbar = () => {
                         <div className="absolute -bottom-1 left-0 h-1 bg-blue-300 w-0 group-hover:w-full transition-all duration-300"></div>
                     </li>
                 ))}
-                <li role="button" className="relative group list-none bg-blue-900 text-white px-4 py-2 rounded-md">
+                <li role="button" className="relative group list-none bg-blue-900 text-white px-4 py-4 rounded-md">
                     <a
-                        href="tel:+2348100000000"
+                        href="tel:+16198307005"
                         className="font-sans font-normal text-sm focus:outline-none"
                     >
                         <IoIosCall size={20} color="#fff" className="inline-block mr-2" />
-                        <span className="text-sm tex-white">+2348100000000</span>
+                        <span className="text-sm tex-white">Call Us</span>
                     </a>
 
                 </li>

@@ -13,27 +13,55 @@ const Explore = () => {
                     initial={{ opacity: 0, y: 20, }}
                     whileInView={{ opacity: 1, y: 0, }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className='text-3xl font-bold tracking-widest leading-10'>Explore Our Premium Brands</motion.h3>
+                    className='sm:text-3xl text-2xl lg:text-5xl font-bold tracking-widest leading-10'>Frequent Brands We Buy</motion.h3>
                 <motion.p
                     initial={{ opacity: 0, y: 20, }}
                     whileInView={{ opacity: 1, y: 0, }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className='text-sm font-normal leading-6 tracking-wider max-w-[600px] mt-6'>At Ecology Cash For Cars, we work with a wide range of vehicle brands, ensuring that no matter what type of car you own, we have a solution for you. From economy cars to luxury brands, we purchase vehicles of all makes and models. Whether you own a Toyota, Ford, BMW, Honda, Mercedes-Benz, Chevrolet, Nissan, or any other brand, we will offer you the best price. Our streamlined process makes selling your car easy, fast, and profitable. Get in touch today and turn your car into cash!</motion.p>
+                    className='text-xs md:text-lg  font-normal leading-7 tracking-wider max-w-[700px] mt-6'>
+                    Ecology cash for cars San Diego provides instant cash for vehicles,
+                    whether they are junk, scrap, luxury, used or in any condition. We are based in San Diego and buy Toyotas, Fords, BMWs, Hondas, Mercedes-Benzes, Nissan and more. We also offer same-day free towing as well as competitive offers tailored for your car's worth. Our 3-step process is hassle-free, regardless of whether your vehicle is running, damaged, or broken. Call or submit your details online to receive an accurate quote and get paid immediately after we pick up the car. We serve all of San Diego County including La Jolla Chula Vista and Oceanside. Call us today to get a no-obligation, free offer for your unwanted vehicle.
+                </motion.p>
                 <motion.button initial={{ opacity: 0, y: 20, }}
                     whileInView={{ opacity: 1, y: 0, }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                     whileHover={{ scale: 1.02 }}
-                    className='bg-black p-4 text-cyan-50 my-6 rounded-2xl hover:bg-black/70 hover:transition-all delay-75 duration-500 ease-linear'>
-                    Show All Brands
+                    className='bg-black p-4 text-cyan-50 my-6 w-full lg:w-auto rounded-2xl hover:bg-black/70 hover:transition-all delay-75 duration-500 ease-linear'>
+                    Call Us (Get $100 on these Brands)
                 </motion.button>
             </div>
             <motion.div
-                initial={{ opacity: 0, y: 20, }}
-                whileInView={{ opacity: 1, y: 0, }}
+                className="relative w-[300px] h-[300px] flex items-center justify-center rounded-full "
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-                <img className='lg:h-[500px] lg:w-[500px] md:w-[300px] md:h-[300px] h-[300px] w-[300px]  object-contain' src="https://demoapus1.com/boxcar/wp-content/uploads/2023/09/logo-brand.png" alt="bg-img" />
+                {[
+                    { src: "/assets/logos/acura.svg", alt: "Acura" },
+                    { src: "/assets/logos/bmw.svg", alt: "BMW" },
+                    { src: "/assets/logos/fiat.svg", alt: "Fiat" },
+                    { src: "/assets/logos/ford.svg", alt: "Ford" },
+                    { src: "/assets/logos/gmc.svg", alt: "GMC" },
+                    { src: "/assets/logos/nissan.svg", alt: "Nissan" },
+                    { src: "/assets/logos/honda.svg", alt: "Honda" },
+                    { src: "/assets/logos/toyota.svg", alt: "Toyota" }
+                ].map((logo, index) => {
+                    const total = 8; // Total logos
+                    const angle = (index / total) * 360; // Spread evenly
+                    return (
+                        <img
+                            key={index}
+                            src={logo.src}
+                            alt={logo.alt}
+                            className="absolute w-12 h-12 object-contain"
+                            style={{
+                                transform: `rotate(${angle}deg) translate(120px) rotate(-${angle}deg)`
+                            }}
+                        />
+                    );
+                })}
             </motion.div>
+
         </motion.section>
     )
 }

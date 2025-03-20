@@ -39,7 +39,7 @@ const Categories = () => {
             <motion.h1 initial={{ opacity: 0, y: 20, }}
                 whileInView={{ opacity: 1, y: 0, }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                id="category-heading" className="lg:text-3xl md:text-2xl sm:tex-xl text-xl font-bold text-center">Browse By Type</motion.h1>
+                id="category-heading" className="lg:text-3xl md:text-2xl sm:tex-xl text-xl font-bold text-center">We Buy It All</motion.h1>
             <motion.div
                 initial={{ opacity: 0, y: 20, }}
                 whileInView={{ opacity: 1, y: 0, }}

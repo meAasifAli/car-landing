@@ -65,15 +65,15 @@ const Hero = () => {
                         className="flex flex-col gap-4 sm:flex-row items-center py-8 w-full"
                     >
                         <button className="flex justify-center items-center p-2 rounded-lg w-full sm:w-auto border border-gray-200 text-gray-200 hover:bg-gray-200 hover:text-black transition duration-300 ease-in-out">
-                            <a href="tel:+919705408555" className="flex items-center  p-2">
-                                <IoCall />
-                                <span>+919705408555</span>
+                            <a href="tel:+16198307005" className="flex items-center  p-3 gap-3">
+                                <IoCall size={25} />
+                                <span className="text-gray-300 text-lg font-medium">Call US</span>
                             </a>
                         </button>
                         <button className="flex justify-center items-center p-2 rounded-lg bg-white w-full sm:w-auto">
-                            <a href="tel:+919705408555" className="flex items-center  p-2">
-                                <FaWhatsapp />
-                                <span>+919705408555</span>
+                            <a target="_blank" href="https://wa.me/16198307005" className="flex items-center  p-3 gap-3">
+                                <FaWhatsapp size={25} />
+                                <span className="text-lg font-medium">WhatsApp</span>
                             </a>
                         </button>
                     </motion.div>

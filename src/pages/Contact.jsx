@@ -149,7 +149,7 @@ const Contact = () => {
                         transition={{ duration: 0.5, ease: "easeInOut" }}
                         whileHover={{ scale: 1.02 }}
                         className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-md ">
-                        Get Your Instant Offer
+                        <a href="#form"> Get Your Instant Offer</a>
                     </motion.button>
                 </div>
             </section>
@@ -224,7 +224,7 @@ const Contact = () => {
 
 
             {/* Main Content */}
-            <div className='flex flex-col lg:flex-row items-start justify-center max-w-7xl mx-auto gap-8 p-4 sm:p-8 w-full'>
+            <div id='form' className='flex flex-col lg:flex-row items-start justify-center max-w-7xl mx-auto gap-8 p-4 sm:p-8 w-full'>
                 {/* Form Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 20, }}
@@ -458,8 +458,8 @@ const Contact = () => {
                         </li>
                         <li className='flex items-center gap-4'>
                             <IoIosCall className='text-blue-600 text-xl' />
-                            <a href='tel:+1234567890' className='text-gray-700 hover:text-blue-600'>
-                                +1234567890
+                            <a href='tel:+16198307005' className='text-gray-700 hover:text-blue-600'>
+                                +16198307005
                             </a>
                         </li>
                         <li className='flex items-center gap-4'>
@@ -483,7 +483,9 @@ const Contact = () => {
                 <button
                     className='bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all'
                 >
-                    Get Started
+                    <a href="tel:+16198307005">
+                        Get Started
+                    </a>
                 </button>
             </motion.section>
         </div>

@@ -21,8 +21,7 @@ const App = () => {
 
 
 
-            <header className="flex justify-between items-center p-2 md:p-2 lg:p-4 w-[90%] mx-auto h-[80px] relative">
-
+            <header className="flex justify-between items-center p-2 md:p-2 lg:p-4 w-[90%] mx-auto h-30 relative">
                 <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
             </header>
             {/* <div className='bg-blue-900 p-2 w-full flex justify-center items-center'>
