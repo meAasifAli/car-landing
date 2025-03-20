@@ -1,7 +1,8 @@
 import React, { useMemo } from "react";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaWhatsapp } from "react-icons/fa";
 import { inputStyles } from "../static/styles";
 import { motion } from "motion/react"
+import { IoCall } from "react-icons/io5";
 
 const Hero = () => {
     const years = useMemo(() => Array.from({ length: 24 }, (_, i) => (2001 + i).toString()), []);
@@ -44,7 +45,7 @@ const Hero = () => {
                         whileInView={{ opacity: 1, y: 0, }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
                         id="hero-heading"
-                        className="font-sans z-10 text-start font-extrabold text-3xl text-gray-100 md:text-5xl lg:text-6xl leading-tight mt-4 "
+                        className="font-sans z-10 text-start font-extrabold text-3xl text-gray-100 md:text-5xl lg:text-6xl leading-16 mt-4 "
                     >
                         Sell Your Junk or Used Car in San Diego – Get Paid Instantly!
                     </motion.h1>
@@ -58,6 +59,24 @@ const Hero = () => {
                         No haggling, no long waits, and absolutely no hidden fees—just fast cash for your car with free towing included.
 
                     </motion.p>
+                    <motion.div initial={{ opacity: 0, y: 20, }}
+                        whileInView={{ opacity: 1, y: 0, }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="flex flex-col gap-4 sm:flex-row items-center py-8 w-full"
+                    >
+                        <button className="flex justify-center items-center p-2 rounded-lg w-full sm:w-auto border border-gray-200 text-gray-200 hover:bg-gray-200 hover:text-black transition duration-300 ease-in-out">
+                            <a href="tel:+919705408555" className="flex items-center  p-2">
+                                <IoCall />
+                                <span>+919705408555</span>
+                            </a>
+                        </button>
+                        <button className="flex justify-center items-center p-2 rounded-lg bg-white w-full sm:w-auto">
+                            <a href="tel:+919705408555" className="flex items-center  p-2">
+                                <FaWhatsapp />
+                                <span>+919705408555</span>
+                            </a>
+                        </button>
+                    </motion.div>
                 </div>
 
                 {/* Right Form */}

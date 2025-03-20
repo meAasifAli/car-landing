@@ -27,9 +27,13 @@ const Explore = () => {
                     Show All Brands
                 </motion.button>
             </div>
-            <div>
+            <motion.div
+                initial={{ opacity: 0, y: 20, }}
+                whileInView={{ opacity: 1, y: 0, }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
                 <img className='lg:h-[500px] lg:w-[500px] md:w-[300px] md:h-[300px] h-[300px] w-[300px]  object-contain' src="https://demoapus1.com/boxcar/wp-content/uploads/2023/09/logo-brand.png" alt="bg-img" />
-            </div>
+            </motion.div>
         </motion.section>
     )
 }

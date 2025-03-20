@@ -1,8 +1,12 @@
-import React from 'react'
+import { motion } from 'motion/react'
 
 const ChooseCard = ({ imgSrc, title, des }) => {
     return (
-        <div className='bg-white cursor-pointer  rounded-lg p-2 sm:p-3 md:p-4 hover:scale-105 delay-75 duration-300 ease-in-out'>
+        <motion.div
+            initial={{ opacity: 0, y: 20, }}
+            whileInView={{ opacity: 1, y: 0, }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className='bg-white cursor-pointer  rounded-lg p-2 sm:p-3 md:p-4 hover:scale-105 delay-75 duration-300 ease-in-out'>
             <video
                 className='h-[70px] w-[70px] object-cover'
                 autoPlay
@@ -22,7 +26,7 @@ const ChooseCard = ({ imgSrc, title, des }) => {
                     {des}
                 </p>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
