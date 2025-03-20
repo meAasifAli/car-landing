@@ -9,17 +9,18 @@ import Services from './pages/Services';
 
 
 
+
 const App = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
     return (
         <>
+
             <header className="flex justify-between items-center p-2 md:p-2 lg:p-4 w-[90%] mx-auto h-[80px] relative">
-                <a href="/">
-                    <h1 className='font-bold text-lg md:text-lg lg:text-xl'>EcologyCash4Car</h1>
-                </a>
+
                 <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
             </header>
-            <div className='bg-blue-500 p-2 w-full flex justify-center items-center'>
+            <div className='bg-blue-900 p-2 w-full flex justify-center items-center'>
                 <IoIosCall className='text-xl text-white' />
                 <a href="tel:+9111111111" className='text-lg text-white'>+91-8081785613</a>
             </div>

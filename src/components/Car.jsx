@@ -4,13 +4,13 @@ import { CiLocationOn } from 'react-icons/ci'
 import { IoIosSpeedometer } from 'react-icons/io'
 
 
-const Car = ({ title, des, miles, fuelType, location, marketPrice, ourPrice }) => {
+const Car = ({ title, des, miles, fuelType, location, marketPrice, ourPrice, imgSrc }) => {
     return (
         <div className='w-[350px] mr-6 h-[500px] rounded-2xl'>
-            <img className='w-full h-[200px] object-cover rounded-t-2xl' src="/assets/car1.jpg" alt="car 1" />
+            <img className='w-full h-[200px] object-cover rounded-t-2xl' src={imgSrc} alt={imgSrc} />
             <div className='pt-4 bg-black px-6 flex flex-col justify-center items-start rounded-b-2xl'>
-                <h2 className='text-white font-medium text-lg text-center'>{title}</h2>
-                <p className='text-white font-normal text-sm text-start'>{des}</p>
+                <h2 className='text-white font-medium text-lg text-start line-clamp-1'>{title}</h2>
+                <p className='text-white font-normal text-sm text-start line-clamp-1'>{des}</p>
                 <div className='flex justify-between items-center w-full mt-4'>
                     <div>
                         <IoIosSpeedometer size={30} color='#fff' />

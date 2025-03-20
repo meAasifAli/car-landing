@@ -6,7 +6,9 @@ export const cars = [
         ourOffer: 5200,
         miles: 140500,
         fuelType: "Gasoline",
-        location: "San Diego"
+        location: "San Diego",
+        imgSrc: "/assets/car1.jpg",
+        des: "✅ Toyota Corolla 2010 (Automatic) – Purchased"
     },
     {
         id: 2,
@@ -15,7 +17,9 @@ export const cars = [
         ourOffer: 4700,
         miles: 160300,
         fuelType: "Gasoline",
-        location: "San Diego"
+        location: "San Diego",
+        imgSrc: "/assets/car2.png",
+        des: "✅ Honda Civic 2008 (Automatic) – Purchased"
     },
     {
         id: 3,
@@ -24,7 +28,9 @@ export const cars = [
         ourOffer: 10600,
         miles: 125700,
         fuelType: "Gasoline",
-        location: "San Diego"
+        location: "San Diego",
+        imgSrc: "/assets/car3.png",
+        des: "✅ Ford F-150 2012 (Manual) – Purchased"
     },
     {
         id: 4,
@@ -33,7 +39,9 @@ export const cars = [
         ourOffer: 3800,
         miles: 180450,
         fuelType: "Gasoline",
-        location: "San Diego"
+        location: "San Diego",
+        imgSrc: "/assets/car4.png",
+        des: "✅ Nissan Altima 2005 (Manual) – Purchased"
     },
     {
         id: 5,
@@ -42,7 +50,9 @@ export const cars = [
         ourOffer: 9300,
         miles: 112500,
         fuelType: "Gasoline",
-        location: "San Diego"
+        location: "San Diego",
+        imgSrc: "/assets/car5.png",
+        des: "✅ BMW 3 Series 2011 (Manual) – Purchased"
     },
     {
         id: 6,
@@ -51,7 +61,9 @@ export const cars = [
         ourOffer: 7900,
         miles: 150400,
         fuelType: "Gasoline",
-        location: "San Diego"
+        location: "San Diego",
+        imgSrc: "/assets/car6.png",
+        des: "✅ Chevrolet Silverado 2007 (Manual) – Purchased"
     },
     {
         id: 7,
@@ -60,16 +72,20 @@ export const cars = [
         ourOffer: 1000,
         miles: 100200,
         fuelType: "Gasoline",
-        location: "San Diego"
+        location: "San Diego",
+        imgSrc: "/assets/car7.png",
+        des: "✅ Toyota Camry 2013 (Manual) – Purchased"
     },
     {
         id: 8,
-        title: " Mazda 6 2006 – Bought!",
+        title: "Mazda 6 2006 – Bought!",
         marketOffer: 3900,
         ourOffer: 4500,
         miles: 172000,
         fuelType: "Gasoline",
-        location: "San Diego"
+        location: "San Diego",
+        imgSrc: "/assets/car8.png",
+        des: "✅ Mazda 6 2006  (Manual) – Purchased"
     },
     {
         id: 9,
@@ -78,7 +94,9 @@ export const cars = [
         ourOffer: 11800,
         miles: 98350,
         fuelType: "Gasoline",
-        location: "San Diego"
+        location: "San Diego",
+        imgSrc: "/assets/car9.png",
+        des: "✅ Dodge Charger 2014  (Manual) – Purchased"
     },
     {
         id: 10,
@@ -87,7 +105,9 @@ export const cars = [
         ourOffer: 7200,
         miles: 140600,
         fuelType: "Gasoline",
-        location: "San Diego"
+        location: "San Diego",
+        imgSrc: "/assets/car10.png",
+        des: "✅ Honda Accord 2009  (Manual) – Purchased"
     },
 
 ]
@@ -175,3 +195,33 @@ export const locations = [
     "Vista, CA",
     "Winter Gardens, CA",
 ];
+
+export const articles = [
+    {
+        id: 1,
+        title: "Sell Your Car for Cash Without a Title in San Diego",
+        content: "Looking to sell your car but lost the title? No problem! At Ecology Cash For Cars, we understand that paperwork can sometimes go missing. Don’t let that stop you from selling your vehicle. Simply give us a call and let us know what documents you have. In most cases, a valid ID and a current or expired registration are enough to complete the sale. Unlike other competitors who may tell you that selling without a title is impossible, we work with you to ensure a smooth process. Get in touch today and get top cash for your car!"
+    },
+    {
+        id: 2,
+        title: "Sell Your Car Without a Smog Check in San Diego",
+        content: "Failed your smog test and don’t want to spend more money on repairs? You’re not alone! Many car owners choose to sell their vehicles after a failed smog check, and we are here to help. At Ecology Cash For Cars, we specialize in buying cars that have not passed smog inspections. Our environmentally friendly junk car program ensures your old vehicle is removed responsibly while putting cash in your pocket. Stop worrying about costly repairs and call us today to sell your car fast, even without a smog certificate."
+    },
+    {
+        id: 3,
+        title: "Who Buys Junk Cars in San Diego?",
+        content: "If you're wondering where to sell your junk car in San Diego, look no further! Ecology Cash For Cars pays top dollar for unwanted vehicles. Our process is simple: we evaluate your car, make a fair cash offer, and handle everything from paperwork to towing. Whether your car is wrecked, non-running, or simply old, we’ll take it off your hands quickly and efficiently."
+    },
+    {
+        id: 4,
+        title: "Best Cash for Cars in San Diego – We Pay the Most!",
+        content: "We take pride in being one of the most trusted cash-for-cars services in San Diego. With hundreds of satisfied customers, we ensure a hassle-free experience. Simply fill out our online quote request form or call us for an instant quote. Our car buyers will come to your location, inspect the car, and pay you cash on the spot. Sell your junk car today and contribute to a cleaner, greener environment while making instant money!"
+    },
+    {
+        id: 5,
+        title: "Get Fast Cash for Cars in San Diego",
+        content: "Tired of receiving lowball offers from other junk car buyers? Ecology Cash For Cars guarantees the highest cash offers in San Diego. We pay what your car is worth—no hidden fees or gimmicks. Our same-day car buying service ensures you get cash in hand without any hassle. Call us now and sell your unwanted car today!"
+    }
+];
+
+
