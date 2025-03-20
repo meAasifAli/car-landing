@@ -1,11 +1,24 @@
 import React from 'react'
 import ChooseCard from '../components/ChooseCard'
+import { motion } from 'motion/react'
 
 const Chooseus = () => {
     return (
-        <section id="choose-us" aria-labelledby='choose-us-heading' className='py-4 sm:py-0 sm:h-screen md:h-screen lg:h-screen flex flex-col justify-center items-center bg-blue-900'>
-            <h1 id='choose-us-heading' className="lg:text-3xl md:text-2xl sm:tex-xl text-xl font-bold text-center py-4 lg:py-16 text-white">Why Show US?</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center  gap-4 mt-4 w-[90%] mx-auto">
+        <motion.section
+            initial={{ opacity: 0, y: 20, }}
+            whileInView={{ opacity: 1, y: 0, }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            id="choose-us" aria-labelledby='choose-us-heading' className='py-4 sm:py-0 sm:h-screen md:h-screen lg:h-screen flex flex-col justify-center items-center bg-blue-900'>
+            <motion.h1
+                initial={{ opacity: 0, y: 20, }}
+                whileInView={{ opacity: 1, y: 0, }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                id='choose-us-heading' className="lg:text-3xl md:text-2xl sm:tex-xl text-xl font-bold text-center py-4 lg:py-16 text-white">Why Show US?</motion.h1>
+            <motion.div
+                initial={{ opacity: 0, y: 20, }}
+                whileInView={{ opacity: 1, y: 0, }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center  gap-4 mt-4 w-[90%] mx-auto">
                 <ChooseCard
                     imgSrc={"https://cdn-icons-mp4.flaticon.com/512/12147/12147233.mp4"}
                     title={"Get the Best Price for Your Car"}
@@ -27,8 +40,8 @@ const Chooseus = () => {
                     des={"No need to drop off your car! We offer free pickup & inspection anywhere in San Diego, making the process seamless."}
                 />
 
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     )
 }
 

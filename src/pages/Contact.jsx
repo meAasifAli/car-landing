@@ -3,7 +3,7 @@ import { CiLocationOn, CiMail, CiSearch } from 'react-icons/ci'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaPhone } from "react-icons/fa";
 import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 import { IoIosCall } from 'react-icons/io';
-
+import { motion } from 'motion/react'
 
 const Contact = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -125,62 +125,97 @@ const Contact = () => {
 
                 {/* Content */}
                 <div className="relative z-10 text-white max-w-3xl">
-                    <h1 className="text-3xl sm:text-5xl font-bold mb-4">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20, }}
+                        whileInView={{ opacity: 1, y: 0, }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="text-3xl sm:text-5xl font-bold mb-4">
                         Sell Your Car Fast & Hassle-Free
-                    </h1>
-                    <p className="text-base sm:text-lg text-gray-200 mb-6">
+                    </motion.h1>
+                    <motion.p
+
+                        initial={{ opacity: 0, y: 20, }}
+                        whileInView={{ opacity: 1, y: 0, }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="text-base sm:text-lg text-gray-200 mb-6">
                         Get an instant offer and sell your car with ease. No hidden fees, no
                         unnecessary paperwork—just a quick and easy process!
-                    </p>
+                    </motion.p>
 
                     {/* Call-to-Action */}
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-md transition-all">
+                    <motion.button
+                        initial={{ opacity: 0, y: 20, }}
+                        whileInView={{ opacity: 1, y: 0, }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        whileHover={{ scale: 1.02 }}
+                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-md ">
                         Get Your Instant Offer
-                    </button>
+                    </motion.button>
                 </div>
             </section>
 
             {/* Benefits Section */}
             <section className="py-16 px-6 sm:px-12 bg-gray-100">
                 <div className="max-w-6xl mx-auto text-center">
-                    <h2 className="text-2xl sm:text-4xl font-bold mb-6 text-gray-900">
+                    <motion.h2
+
+                        initial={{ opacity: 0, y: 20, }}
+                        whileInView={{ opacity: 1, y: 0, }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="text-2xl sm:text-4xl font-bold mb-6 text-gray-900">
                         Why Sell With Us?
-                    </h2>
-                    <p className="text-base sm:text-lg text-gray-700 mb-8">
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20, }}
+                        whileInView={{ opacity: 1, y: 0, }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="text-base sm:text-lg text-gray-700 mb-8">
                         We make selling your car easy, transparent, and rewarding.
-                    </p>
+                    </motion.p>
 
                     {/* Responsive Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {/* Feature 1 */}
-                        <div className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center text-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20, }}
+                            whileInView={{ opacity: 1, y: 0, }}
+                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                            className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center text-center">
                             <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                                 Instant Cash Offer
                             </h3>
                             <p className="text-sm sm:text-base text-gray-600">
                                 Get a competitive, no-obligation offer for your car within minutes.
                             </p>
-                        </div>
+                        </motion.div>
 
                         {/* Feature 2 */}
-                        <div className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center text-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20, }}
+                            whileInView={{ opacity: 1, y: 0, }}
+                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                            className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center text-center">
                             <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                                 Hassle-Free Process
                             </h3>
                             <p className="text-sm sm:text-base text-gray-600">
                                 We handle all paperwork and pickup—zero stress for you.
                             </p>
-                        </div>
+                        </motion.div>
 
                         {/* Feature 3 */}
-                        <div className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center text-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20, }}
+                            whileInView={{ opacity: 1, y: 0, }}
+                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                            className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center text-center">
                             <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                                 Secure & Fast Payment
                             </h3>
                             <p className="text-sm sm:text-base text-gray-600">
                                 Get paid quickly and securely with no hidden fees or deductions.
                             </p>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -191,7 +226,11 @@ const Contact = () => {
             {/* Main Content */}
             <div className='flex flex-col lg:flex-row items-start justify-center max-w-7xl mx-auto gap-8 p-4 sm:p-8 w-full'>
                 {/* Form Section */}
-                <div className='flex-1 w-full lg:w-2/3'>
+                <motion.div
+                    initial={{ opacity: 0, y: 20, }}
+                    whileInView={{ opacity: 1, y: 0, }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className='flex-1 w-full lg:w-2/3'>
                     <div className='bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl'>
                         {/* Form Header */}
                         <div className='bg-gradient-to-r from-blue-900 to-blue-700 w-full p-6 rounded-t-2xl'>
@@ -206,7 +245,8 @@ const Contact = () => {
                         </div>
 
                         {/* Form Content */}
-                        <div className='overflow-y-auto h-[50vh] p-6'>
+                        <div
+                            className='overflow-y-auto h-[50vh] p-6'>
                             {currIndex === 0 && (
                                 <div>
                                     <div className='flex items-center border-b border-gray-200 pb-4'>
@@ -401,10 +441,14 @@ const Contact = () => {
                             </div>
                         </Dialog>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Contact Section */}
-                <div className='flex-1 w-full lg:w-1/3 bg-white p-6 rounded-2xl shadow-xl'>
+                <motion.div
+                    initial={{ opacity: 0, y: 20, }}
+                    whileInView={{ opacity: 1, y: 0, }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className='flex-1 w-full lg:w-1/3 bg-white p-6 rounded-2xl shadow-xl'>
                     <h1 className='text-2xl font-bold text-gray-800'>Interested to Sell Your Car?</h1>
                     <p className='text-gray-500 mt-2'>We are ready to pick your car</p>
                     <ul className='mt-6 space-y-4'>
@@ -425,11 +469,15 @@ const Contact = () => {
                             </a>
                         </li>
                     </ul>
-                </div>
+                </motion.div>
             </div>
 
             {/* Call-to-Action Section */}
-            <section className='w-full bg-gradient-to-r from-blue-900 to-blue-700 py-12 text-center'>
+            <motion.section
+                initial={{ opacity: 0, y: 20, }}
+                whileInView={{ opacity: 1, y: 0, }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className='w-full bg-gradient-to-r from-blue-900 to-blue-700 py-12 text-center'>
                 <h2 className='text-3xl font-bold text-white mb-4'>Ready to Sell Your Car?</h2>
                 <p className='text-lg text-gray-200 mb-6'>Get an instant offer today!</p>
                 <button
@@ -437,7 +485,7 @@ const Contact = () => {
                 >
                     Get Started
                 </button>
-            </section>
+            </motion.section>
         </div>
     )
 }

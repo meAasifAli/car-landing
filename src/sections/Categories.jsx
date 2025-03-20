@@ -5,6 +5,7 @@ import { FaCar, FaCarAlt, FaShuttleVan, FaTruckPickup } from "react-icons/fa";
 import { MdElectricCar } from "react-icons/md";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { CgChevronLeft, CgChevronRight } from 'react-icons/cg';
+import { motion } from 'motion/react';
 
 const Categories = () => {
     const scrollRef = useRef(null)
@@ -35,8 +36,15 @@ const Categories = () => {
     };
     return (
         <section id="category" aria-labelledby="category-heading" className="lg:pt-[150px] md:pt-[100px] pt-[50px] pb-8 lg:pb-16 w-full lg:w-[90%] mx-auto">
-            <h1 id="category-heading" className="lg:text-3xl md:text-2xl sm:tex-xl text-xl font-bold text-center">Browse By Type</h1>
-            <div className="relative">
+            <motion.h1 initial={{ opacity: 0, y: 20, }}
+                whileInView={{ opacity: 1, y: 0, }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                id="category-heading" className="lg:text-3xl md:text-2xl sm:tex-xl text-xl font-bold text-center">Browse By Type</motion.h1>
+            <motion.div
+                initial={{ opacity: 0, y: 20, }}
+                whileInView={{ opacity: 1, y: 0, }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="relative">
                 {showButtons && (
                     <button
                         onClick={scrollLeft}
@@ -69,7 +77,7 @@ const Categories = () => {
                         <CgChevronRight size={20} />
                     </button>
                 )}
-            </div>
+            </motion.div>
         </section>
     )
 }

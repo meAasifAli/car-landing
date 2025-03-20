@@ -1,9 +1,14 @@
 import React from 'react'
 import Banner from '../components/Banner'
+import { motion } from "motion/react"
 
 const Banners = () => {
     return (
-        <section className='flex flex-col md:flex-row items-center gap-8 w-[90%] mx-auto py-4 md:py-8 lg:py-16' id="banner" aria-labelledby='banner'>
+        <motion.section
+            initial={{ opacity: 0, y: 20, }}
+            whileInView={{ opacity: 1, y: 0, }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className='flex flex-col md:flex-row items-center gap-8 w-[90%] mx-auto py-4 md:py-8 lg:py-16' id="banner" aria-labelledby='banner'>
             <Banner
                 heading={"Looking to Sell Your Car?"}
                 des={"We are dedicated to providing our customers with a smooth, hassle-free selling experience. Whether your car is old, damaged, or simply no longer needed, we make the process quick and easy. Our team ensures you receive a fair offer with exceptional service every step of the way."}
@@ -20,7 +25,7 @@ const Banners = () => {
             />
 
 
-        </section>
+        </motion.section>
     )
 }
 

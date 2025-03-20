@@ -1,10 +1,14 @@
-import React from 'react'
+import { motion } from 'motion/react'
 
 const Map = () => {
     return (
-        <div className='w-full h-[400px]'>
+        <motion.div
+            initial={{ opacity: 0, y: 20, }}
+            whileInView={{ opacity: 1, y: 0, }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className='w-full h-[400px]'>
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d429155.6498436182!2d-117.43741925837581!3d32.824633031614475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d95495497f80c9%3A0x5df0f4372635e247!2sSan%20Diego%20Zoo!5e0!3m2!1sen!2sin!4v1742435443995!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13448.399258709504!2d-116.919919!3d32.576862!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d94703ae5c2cd1%3A0x3992b73ef529d910!2sQuick%20Auto%20Wrecking!5e0!3m2!1sen!2sus!4v1742485600880!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -12,7 +16,7 @@ const Map = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
-        </div>
+        </motion.div >
 
     )
 }

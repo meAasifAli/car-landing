@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { FaStar } from "react-icons/fa";
 import { inputStyles } from "../static/styles";
+import { motion } from "motion/react"
 
 const Hero = () => {
     const years = useMemo(() => Array.from({ length: 24 }, (_, i) => (2001 + i).toString()), []);
@@ -9,43 +10,61 @@ const Hero = () => {
         <header
             id="home"
             aria-labelledby="hero-heading"
-            className="relative min-h-screen w-full flex flex-col justify-center items-center bg-slate-200 px-4  py-4 sm:py-0"
+            className="relative min-h-screen w-full flex flex-col justify-center items-center bg-gradient-to-tr from-blue-900 to-blue-800 px-4  py-4 sm:py-0"
         >
-            <article className="flex flex-col md:flex-row gap-6 lg:gap-10 md:justify-between justify-center items-center text-center w-full max-w-7xl mx-auto">
+            <article className="flex flex-col md:flex-row gap-4 lg:gap-10 md:justify-between justify-center items-center text-center w-full max-w-7xl mx-auto">
                 {/* Left Content */}
-                <div className="flex flex-col justify-start items-start w-full max-w-2xl">
+                <div className="flex flex-col  justify-start items-start w-full max-w-2xl">
                     {/* Star Ratings */}
-                    <div className="flex items-center gap-2">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20, }}
+                        whileInView={{ opacity: 1, y: 0, }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="flex items-center gap-2">
                         <div className="flex">
                             {Array.from({ length: 5 }).map((_, index) => (
                                 <FaStar key={index} size={20} className="text-yellow-500" />
                             ))}
                         </div>
-                        <span className="text-sm font-normal text-gray-700">4.8 (1,000+ reviews)</span>
-                    </div>
+                        <span className="text-sm font-normal text-gray-200">4.8 (1,000+ reviews)</span>
+                    </motion.div>
 
                     {/* Supporting Text */}
-                    <p className="text-lg font-medium text-gray-700 mt-2 text-start">
+                    <motion.p
+                        initial={{ opacity: 0, y: 20, }}
+                        whileInView={{ opacity: 1, y: 0, }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="text-lg font-medium text-gray-200 mt-2 text-start">
                         Free Pickup | Instant Offer | Hassle-Free Process.
-                    </p>
+                    </motion.p>
 
                     {/* Main Heading */}
-                    <h1
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20, }}
+                        whileInView={{ opacity: 1, y: 0, }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
                         id="hero-heading"
-                        className="font-sans z-10 text-start font-extrabold text-3xl md:text-5xl lg:text-6xl leading-tight mt-4 text-black"
+                        className="font-sans z-10 text-start font-extrabold text-3xl text-gray-100 md:text-5xl lg:text-6xl leading-tight mt-4 "
                     >
                         Sell Your Junk or Used Car in San Diego – Get Paid Instantly!
-                    </h1>
+                    </motion.h1>
 
-                    <p className="text-base text-start md:text-lg text-gray-600 max-w-2xl mt-4 z-10">
+                    <motion.p
+                        initial={{ opacity: 0, y: 20, }}
+                        whileInView={{ opacity: 1, y: 0, }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="text-base text-start md:text-lg text-gray-200 max-w-2xl mt-4 z-10">
                         Got a junk or second-hand car you no longer need? We make selling your car quick, easy, and hassle-free!
                         No haggling, no long waits, and absolutely no hidden fees—just fast cash for your car with free towing included.
-                        Whether it’s wrecked, non-running, or simply unwanted, we’ll give you a fair offer on the spot.
-                    </p>
+
+                    </motion.p>
                 </div>
 
                 {/* Right Form */}
-                <form
+                <motion.form
+                    initial={{ opacity: 0, y: 20, }}
+                    whileInView={{ opacity: 1, y: 0, }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
                     aria-labelledby="search-form-label"
                     className="flex flex-col z-10 gap-4 p-6 bg-white shadow-md rounded-lg w-full max-w-md mx-auto lg:rounded-2xl"
                 >
@@ -131,16 +150,10 @@ const Hero = () => {
                             Get Estimate Now
                         </button>
                     </fieldset>
-                </form>
+                </motion.form>
             </article>
 
-            {/* Background Image */}
-            <img
-                className="hidden sm:flex absolute z-0 -bottom-40 h-56 md:h-72 lg:h-96 w-full object-contain"
-                src="https://demoapus1.com/boxcar/wp-content/uploads/2023/11/slider51.png"
-                alt="Background image of a car"
-                loading="lazy"
-            />
+
         </header>
     );
 };
