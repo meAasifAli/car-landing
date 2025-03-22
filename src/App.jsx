@@ -6,8 +6,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Footer = lazy(() => import('./sections/Footer'));
-import { InfinitySpin } from 'react-loader-spinner'
-
+import { SyncLoader } from 'react-spinners';
 
 
 
@@ -19,12 +18,7 @@ const App = () => {
 
     return (
         <Suspense fallback={<section className='flex justify-center items-center h-screen w-screen'>
-            <InfinitySpin
-                visible={true}
-                width="200"
-                color="blue"
-                ariaLabel="infinity-spin-loading"
-            />
+            <SyncLoader color="#blue" />
         </section>}>
             <header className="flex justify-between items-center p-2 md:p-2 lg:p-4 w-[90%] mx-auto h-30 relative">
                 <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
