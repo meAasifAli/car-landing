@@ -35,7 +35,7 @@ const Categories = () => {
         }
     };
     return (
-        <section id="category" aria-labelledby="category-heading" className="lg:pt-[150px] md:pt-[100px] pt-[50px] pb-8 lg:pb-16 w-full lg:w-[90%] mx-auto">
+        <section id="category" aria-labelledby="category-heading" className="lg:pt-[100px] md:pt-[100px] pt-[50px] pb-8 lg:pb-16 w-full lg:w-[90%] mx-auto">
             <motion.h1 initial={{ opacity: 0, y: 20, }}
                 whileInView={{ opacity: 1, y: 0, }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}

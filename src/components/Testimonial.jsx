@@ -21,7 +21,7 @@ const Testimonial = ({ imgSrc, name, des, rating }) => {
                         </div>
                     </div>
                 </div>
-                <img className='h-15 w-15 object-cover' src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="google" />
+
             </div>
             <p className='text-gray-700 mt-4 leading-6 tracking-wider text-sm testimonail-des'>{des}</p>
             <div className='absolute bottom-0 right-2'>

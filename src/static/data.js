@@ -84,7 +84,7 @@ export const cars = [
         miles: 172000,
         fuelType: "Gasoline",
         location: "San Diego",
-        imgSrc: "/assets/car8.png",
+        imgSrc: "/assets/mazda.jpg",
         des: "✅ Mazda 6 2006  (Manual) – Purchased"
     },
     {

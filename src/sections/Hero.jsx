@@ -152,7 +152,7 @@ const Hero = () => {
                         </label>
                         <select id="price" className={inputStyles}>
                             <option value="" disabled selected>
-                                Expected Price
+                                What is Your Offer?
                             </option>
                             <option value="0-1000">$0 - $1,000</option>
                             <option value="1000-2000">$1,000 - $2,000</option>
